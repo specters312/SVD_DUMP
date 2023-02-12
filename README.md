@@ -9,11 +9,6 @@ SVD files are kind of hard to come by and companies usually dont want you to hav
 - @rqu
 - A really smart hardware hacker named Josh
 
-## License
-
-[MIT](https://choosealicense.com/licenses/mit/)
-
-
 ## Feedback
 
 If you have any feedback, please submit a ticket and we will get on it when we are available. 
