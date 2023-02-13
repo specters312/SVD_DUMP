@@ -5,7 +5,7 @@ import shutil
 manufacturers = {
     'ARM':['ARM','CMSDK'],
     'Allwinner_Community':['D1'],
-    'Silicon_Labs': ['EFM', 'EFR', 'EZR','MGM','ZGM','BGM'],
+    'Silicon_Labs': ['EFM', 'EFR', 'EZR','MGM','ZGM','BGM','WGM'],
     'Texas_Instruments': ['TM4C', 'MSP', 'CC13', 'CC26'],
     'Cypress':['psoc'],
     'GigaDevice':['GD3'],
@@ -21,7 +21,9 @@ manufacturers = {
     'RaspberryPi':['RP'],
     'Microchip': ['PIC', 'SAM'],
     'STMicroelectronics': ['STM'],
-    'Fuji_Electric': ['MB9', 'S6E']
+    'Fuji_Electric': ['MB9', 'S6E'],
+    'Infineon':['XMC','CYW'],
+    'TOSHIBA':['M365']
 }
 
 def classify_manufacturer(filename):
