@@ -11,7 +11,7 @@ manufacturers = {
     'GigaDevice':['GD3'],
     'Holtek':['HT3'],
     'Espressif-Community':['ESP'],
-    'Freescale':['MK'],
+    'Freescale':['MK','SKEA'],
     'STMicroelectronics': ['STM'],
     'NXP_Semiconductors': ['LPC', 'QN9','MIM'],
     'Atmel': ['SAM','AT'],
@@ -23,7 +23,11 @@ manufacturers = {
     'STMicroelectronics': ['STM'],
     'Fuji_Electric': ['MB9', 'S6E'],
     'Infineon':['XMC','CYW'],
-    'TOSHIBA':['M365']
+    'TOSHIBA':['M365'],
+    'Maxim Integrated': ['MAX'],
+    'Microsemi': ['M1','M2'],
+    'SiFive': ['FE'],
+    'Canaan Inc': ['K210'],
 }
 
 def classify_manufacturer(filename):
