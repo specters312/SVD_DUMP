@@ -1,50 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<device xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" schemaVersion="1.3" xs:noNamespaceSchemaLocation="CMSIS-SVD.xsd">
+<device xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" schemaVersion="1.0" xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1.0.xsd">
   <name>EFM32GG990F1024</name>
-  <version>4.0.0</version>
+  <version>4.2.0</version>
   <description>Silicon Labs EFM32GG990F1024 Cortex-M MCU</description>
-  <licenseText>
-    *******************************************************************************\n
-    * # License                                                                    \n
-    * Copyright 2021 Silicon Laboratories Inc. www.silabs.com                      \n
-    *******************************************************************************\n
-    *                                                                              \n
-    * SPDX-License-Identifier: Zlib                                                \n
-    *                                                                              \n
-    * The licensor of this software is Silicon Laboratories Inc.                   \n
-    *                                                                              \n
-    * This software is provided 'as-is', without any express or implied            \n
-    * warranty. In no event will the authors be held liable for any damages        \n
-    * arising from the use of this software.                                       \n
-    *                                                                              \n
-    * Permission is granted to anyone to use this software for any purpose,        \n
-    * including commercial applications, and to alter it and redistribute it       \n
-    * freely, subject to the following restrictions:                               \n
-    *                                                                              \n
-    * 1. The origin of this software must not be misrepresented; you must not      \n
-    *    claim that you wrote the original software. If you use this software      \n
-    *    in a product, an acknowledgment in the product documentation would be     \n
-    *    appreciated but is not required.                                          \n
-    * 2. Altered source versions must be plainly marked as such, and must not be   \n
-    *    misrepresented as being the original software.                            \n
-    * 3. This notice may not be removed or altered from any source distribution.   \n
-    *                                                                              \n
-    *******************************************************************************
-  </licenseText>
-  <cpu>
-    <name>CM3</name>
-      <revision>r2p1</revision>
-    <endian>little</endian>
-    <mpuPresent>true</mpuPresent>
-    <fpuPresent>false</fpuPresent>
-    <nvicPrioBits>3</nvicPrioBits>
-    <vendorSystickConfig>false</vendorSystickConfig>
-  </cpu>
   <addressUnitBits>8</addressUnitBits>
   <width>32</width>
   <peripherals>
     <peripheral>
       <name>DMA</name>
+      <version>4.2.0</version>
       <description>DMA</description>
       <baseAddress>0x400C2000</baseAddress>
       <addressBlock>
@@ -2270,6 +2234,7 @@
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>MSC</name>
+                  <description>""</description>
                   <value>0x00000030</value>
                 </enumeratedValue>
                 <enumeratedValue>
@@ -2396,6 +2361,7 @@
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>MSC</name>
+                  <description>""</description>
                   <value>0x00000030</value>
                 </enumeratedValue>
                 <enumeratedValue>
@@ -2522,6 +2488,7 @@
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>MSC</name>
+                  <description>""</description>
                   <value>0x00000030</value>
                 </enumeratedValue>
                 <enumeratedValue>
@@ -2648,6 +2615,7 @@
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>MSC</name>
+                  <description>""</description>
                   <value>0x00000030</value>
                 </enumeratedValue>
                 <enumeratedValue>
@@ -2774,6 +2742,7 @@
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>MSC</name>
+                  <description>""</description>
                   <value>0x00000030</value>
                 </enumeratedValue>
                 <enumeratedValue>
@@ -2900,6 +2869,7 @@
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>MSC</name>
+                  <description>""</description>
                   <value>0x00000030</value>
                 </enumeratedValue>
                 <enumeratedValue>
@@ -3026,6 +2996,7 @@
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>MSC</name>
+                  <description>""</description>
                   <value>0x00000030</value>
                 </enumeratedValue>
                 <enumeratedValue>
@@ -3152,6 +3123,7 @@
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>MSC</name>
+                  <description>""</description>
                   <value>0x00000030</value>
                 </enumeratedValue>
                 <enumeratedValue>
@@ -3278,6 +3250,7 @@
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>MSC</name>
+                  <description>""</description>
                   <value>0x00000030</value>
                 </enumeratedValue>
                 <enumeratedValue>
@@ -3404,6 +3377,7 @@
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>MSC</name>
+                  <description>""</description>
                   <value>0x00000030</value>
                 </enumeratedValue>
                 <enumeratedValue>
@@ -3530,6 +3504,7 @@
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>MSC</name>
+                  <description>""</description>
                   <value>0x00000030</value>
                 </enumeratedValue>
                 <enumeratedValue>
@@ -3656,6 +3631,7 @@
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>MSC</name>
+                  <description>""</description>
                   <value>0x00000030</value>
                 </enumeratedValue>
                 <enumeratedValue>
@@ -3681,6 +3657,7 @@
     </peripheral>
     <peripheral>
       <name>AES</name>
+      <version>4.2.0</version>
       <description>AES</description>
       <baseAddress>0x400E0000</baseAddress>
       <addressBlock>
@@ -4055,6 +4032,7 @@
     </peripheral>
     <peripheral>
       <name>USB</name>
+      <version>4.2.0</version>
       <description>USB</description>
       <baseAddress>0x400C4000</baseAddress>
       <addressBlock>
@@ -5128,7 +5106,7 @@
           <size>32</size>
           <access>read-only</access>
           <resetValue>0x00000000</resetValue>
-          <resetMask>0x01FFFFFF</resetMask>
+          <resetMask>0x0F1FFFFF</resetMask>
           <fields>
             <field>
               <name>CHEPNUM</name>
@@ -5220,7 +5198,7 @@
             <field>
               <name>FN</name>
               <description>Frame Number device only</description>
-              <bitOffset>21</bitOffset>
+              <bitOffset>24</bitOffset>
               <bitWidth>4</bitWidth>
               <access>read-only</access>
             </field>
@@ -15116,6 +15094,7 @@
     </peripheral>
     <peripheral>
       <name>MSC</name>
+      <version>4.2.0</version>
       <description>MSC</description>
       <baseAddress>0x400C0000</baseAddress>
       <addressBlock>
@@ -15245,18 +15224,22 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>CPU</name>
+                  <description>""</description>
                   <value>0x00000000</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>DMA</name>
+                  <description>""</description>
                   <value>0x00000001</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>DMAEM1</name>
+                  <description>""</description>
                   <value>0x00000002</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>NONE</name>
+                  <description>""</description>
                   <value>0x00000003</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -15660,10 +15643,12 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>UNLOCKED</name>
+                  <description>""</description>
                   <value>0x00000000</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>LOCKED</name>
+                  <description>""</description>
                   <value>0x00000001</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -15797,6 +15782,7 @@
     </peripheral>
     <peripheral>
       <name>EMU</name>
+      <version>4.2.0</version>
       <description>EMU</description>
       <baseAddress>0x400C6000</baseAddress>
       <addressBlock>
@@ -15894,10 +15880,12 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>UNLOCKED</name>
+                  <description>""</description>
                   <value>0x00000000</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>LOCKED</name>
+                  <description>""</description>
                   <value>0x00000001</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -15999,7 +15987,7 @@
           <size>32</size>
           <access>read-write</access>
           <resetValue>0x00000000</resetValue>
-          <resetMask>0x0000006F</resetMask>
+          <resetMask>0x00000067</resetMask>
           <fields>
             <field>
               <name>EN</name>
@@ -16019,13 +16007,6 @@
               <name>BODCAL</name>
               <description>Enable BOD calibration mode</description>
               <bitOffset>2</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>BUMODEBODEN</name>
-              <description>Enable brown out detection on BU_VIN when in backup mode</description>
-              <bitOffset>3</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
             </field>
@@ -16132,12 +16113,14 @@
           <fields>
             <field>
               <name>BUENTHRES</name>
+              <description>""</description>
               <bitOffset>0</bitOffset>
               <bitWidth>3</bitWidth>
               <access>read-write</access>
             </field>
             <field>
               <name>BUENRANGE</name>
+              <description>""</description>
               <bitOffset>3</bitOffset>
               <bitWidth>2</bitWidth>
               <access>read-write</access>
@@ -16184,12 +16167,14 @@
           <fields>
             <field>
               <name>BUEXTHRES</name>
+              <description>""</description>
               <bitOffset>0</bitOffset>
               <bitWidth>3</bitWidth>
               <access>read-write</access>
             </field>
             <field>
               <name>BUEXRANGE</name>
+              <description>""</description>
               <bitOffset>3</bitOffset>
               <bitWidth>2</bitWidth>
               <access>read-write</access>
@@ -16344,12 +16329,14 @@
           <fields>
             <field>
               <name>THRES</name>
+              <description>""</description>
               <bitOffset>0</bitOffset>
               <bitWidth>3</bitWidth>
               <access>read-write</access>
             </field>
             <field>
               <name>RANGE</name>
+              <description>""</description>
               <bitOffset>3</bitOffset>
               <bitWidth>2</bitWidth>
               <access>read-write</access>
@@ -16367,12 +16354,14 @@
           <fields>
             <field>
               <name>THRES</name>
+              <description>""</description>
               <bitOffset>0</bitOffset>
               <bitWidth>3</bitWidth>
               <access>read-write</access>
             </field>
             <field>
               <name>RANGE</name>
+              <description>""</description>
               <bitOffset>3</bitOffset>
               <bitWidth>2</bitWidth>
               <access>read-write</access>
@@ -16383,6 +16372,7 @@
     </peripheral>
     <peripheral>
       <name>RMU</name>
+      <version>4.2.0</version>
       <description>RMU</description>
       <baseAddress>0x400CA000</baseAddress>
       <addressBlock>
@@ -16561,6 +16551,7 @@
     </peripheral>
     <peripheral>
       <name>CMU</name>
+      <version>4.2.0</version>
       <description>CMU</description>
       <baseAddress>0x400C8000</baseAddress>
       <addressBlock>
@@ -18748,10 +18739,12 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>UNLOCKED</name>
+                  <description>""</description>
                   <value>0x00000000</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>LOCKED</name>
+                  <description>""</description>
                   <value>0x00000001</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -18762,6 +18755,7 @@
     </peripheral>
     <peripheral>
       <name>LESENSE</name>
+      <version>4.2.0</version>
       <description>LESENSE</description>
       <baseAddress>0x4008C000</baseAddress>
       <addressBlock>
@@ -19438,12 +19432,14 @@
             </field>
             <field>
               <name>INPUT</name>
+              <description>""</description>
               <bitOffset>8</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
             </field>
             <field>
               <name>PRSSEL0</name>
+              <description>""</description>
               <bitOffset>10</bitOffset>
               <bitWidth>4</bitWidth>
               <access>read-write</access>
@@ -19512,6 +19508,7 @@
             </field>
             <field>
               <name>PRSSEL1</name>
+              <description>""</description>
               <bitOffset>14</bitOffset>
               <bitWidth>4</bitWidth>
               <access>read-write</access>
@@ -19580,6 +19577,7 @@
             </field>
             <field>
               <name>PRSSEL2</name>
+              <description>""</description>
               <bitOffset>18</bitOffset>
               <bitWidth>4</bitWidth>
               <access>read-write</access>
@@ -19648,6 +19646,7 @@
             </field>
             <field>
               <name>PRSSEL3</name>
+              <description>""</description>
               <bitOffset>22</bitOffset>
               <bitWidth>4</bitWidth>
               <access>read-write</access>
@@ -20682,138 +20681,161 @@
           <fields>
             <field>
               <name>CH0</name>
+              <description>""</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-only</access>
             </field>
             <field>
               <name>CH1</name>
+              <description>""</description>
               <bitOffset>1</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-only</access>
             </field>
             <field>
               <name>CH2</name>
+              <description>""</description>
               <bitOffset>2</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-only</access>
             </field>
             <field>
               <name>CH3</name>
+              <description>""</description>
               <bitOffset>3</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-only</access>
             </field>
             <field>
               <name>CH4</name>
+              <description>""</description>
               <bitOffset>4</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-only</access>
             </field>
             <field>
               <name>CH5</name>
+              <description>""</description>
               <bitOffset>5</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-only</access>
             </field>
             <field>
               <name>CH6</name>
+              <description>""</description>
               <bitOffset>6</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-only</access>
             </field>
             <field>
               <name>CH7</name>
+              <description>""</description>
               <bitOffset>7</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-only</access>
             </field>
             <field>
               <name>CH8</name>
+              <description>""</description>
               <bitOffset>8</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-only</access>
             </field>
             <field>
               <name>CH9</name>
+              <description>""</description>
               <bitOffset>9</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-only</access>
             </field>
             <field>
               <name>CH10</name>
+              <description>""</description>
               <bitOffset>10</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-only</access>
             </field>
             <field>
               <name>CH11</name>
+              <description>""</description>
               <bitOffset>11</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-only</access>
             </field>
             <field>
               <name>CH12</name>
+              <description>""</description>
               <bitOffset>12</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-only</access>
             </field>
             <field>
               <name>CH13</name>
+              <description>""</description>
               <bitOffset>13</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-only</access>
             </field>
             <field>
               <name>CH14</name>
+              <description>""</description>
               <bitOffset>14</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-only</access>
             </field>
             <field>
               <name>CH15</name>
+              <description>""</description>
               <bitOffset>15</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-only</access>
             </field>
             <field>
               <name>SCANCOMPLETE</name>
+              <description>""</description>
               <bitOffset>16</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-only</access>
             </field>
             <field>
               <name>DEC</name>
+              <description>""</description>
               <bitOffset>17</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-only</access>
             </field>
             <field>
               <name>DECERR</name>
+              <description>""</description>
               <bitOffset>18</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-only</access>
             </field>
             <field>
               <name>BUFDATAV</name>
+              <description>""</description>
               <bitOffset>19</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-only</access>
             </field>
             <field>
               <name>BUFLEVEL</name>
+              <description>""</description>
               <bitOffset>20</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-only</access>
             </field>
             <field>
               <name>BUFOF</name>
+              <description>""</description>
               <bitOffset>21</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-only</access>
             </field>
             <field>
               <name>CNTOF</name>
+              <description>""</description>
               <bitOffset>22</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-only</access>
@@ -20831,138 +20853,161 @@
           <fields>
             <field>
               <name>CH0</name>
+              <description>""</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
               <access>write-only</access>
             </field>
             <field>
               <name>CH1</name>
+              <description>""</description>
               <bitOffset>1</bitOffset>
               <bitWidth>1</bitWidth>
               <access>write-only</access>
             </field>
             <field>
               <name>CH2</name>
+              <description>""</description>
               <bitOffset>2</bitOffset>
               <bitWidth>1</bitWidth>
               <access>write-only</access>
             </field>
             <field>
               <name>CH3</name>
+              <description>""</description>
               <bitOffset>3</bitOffset>
               <bitWidth>1</bitWidth>
               <access>write-only</access>
             </field>
             <field>
               <name>CH4</name>
+              <description>""</description>
               <bitOffset>4</bitOffset>
               <bitWidth>1</bitWidth>
               <access>write-only</access>
             </field>
             <field>
               <name>CH5</name>
+              <description>""</description>
               <bitOffset>5</bitOffset>
               <bitWidth>1</bitWidth>
               <access>write-only</access>
             </field>
             <field>
               <name>CH6</name>
+              <description>""</description>
               <bitOffset>6</bitOffset>
               <bitWidth>1</bitWidth>
               <access>write-only</access>
             </field>
             <field>
               <name>CH7</name>
+              <description>""</description>
               <bitOffset>7</bitOffset>
               <bitWidth>1</bitWidth>
               <access>write-only</access>
             </field>
             <field>
               <name>CH8</name>
+              <description>""</description>
               <bitOffset>8</bitOffset>
               <bitWidth>1</bitWidth>
               <access>write-only</access>
             </field>
             <field>
               <name>CH9</name>
+              <description>""</description>
               <bitOffset>9</bitOffset>
               <bitWidth>1</bitWidth>
               <access>write-only</access>
             </field>
             <field>
               <name>CH10</name>
+              <description>""</description>
               <bitOffset>10</bitOffset>
               <bitWidth>1</bitWidth>
               <access>write-only</access>
             </field>
             <field>
               <name>CH11</name>
+              <description>""</description>
               <bitOffset>11</bitOffset>
               <bitWidth>1</bitWidth>
               <access>write-only</access>
             </field>
             <field>
               <name>CH12</name>
+              <description>""</description>
               <bitOffset>12</bitOffset>
               <bitWidth>1</bitWidth>
               <access>write-only</access>
             </field>
             <field>
               <name>CH13</name>
+              <description>""</description>
               <bitOffset>13</bitOffset>
               <bitWidth>1</bitWidth>
               <access>write-only</access>
             </field>
             <field>
               <name>CH14</name>
+              <description>""</description>
               <bitOffset>14</bitOffset>
               <bitWidth>1</bitWidth>
               <access>write-only</access>
             </field>
             <field>
               <name>CH15</name>
+              <description>""</description>
               <bitOffset>15</bitOffset>
               <bitWidth>1</bitWidth>
               <access>write-only</access>
             </field>
             <field>
               <name>SCANCOMPLETE</name>
+              <description>""</description>
               <bitOffset>16</bitOffset>
               <bitWidth>1</bitWidth>
               <access>write-only</access>
             </field>
             <field>
               <name>DEC</name>
+              <description>""</description>
               <bitOffset>17</bitOffset>
               <bitWidth>1</bitWidth>
               <access>write-only</access>
             </field>
             <field>
               <name>DECERR</name>
+              <description>""</description>
               <bitOffset>18</bitOffset>
               <bitWidth>1</bitWidth>
               <access>write-only</access>
             </field>
             <field>
               <name>BUFDATAV</name>
+              <description>""</description>
               <bitOffset>19</bitOffset>
               <bitWidth>1</bitWidth>
               <access>write-only</access>
             </field>
             <field>
               <name>BUFLEVEL</name>
+              <description>""</description>
               <bitOffset>20</bitOffset>
               <bitWidth>1</bitWidth>
               <access>write-only</access>
             </field>
             <field>
               <name>BUFOF</name>
+              <description>""</description>
               <bitOffset>21</bitOffset>
               <bitWidth>1</bitWidth>
               <access>write-only</access>
             </field>
             <field>
               <name>CNTOF</name>
+              <description>""</description>
               <bitOffset>22</bitOffset>
               <bitWidth>1</bitWidth>
               <access>write-only</access>
@@ -20980,138 +21025,161 @@
           <fields>
             <field>
               <name>CH0</name>
+              <description>""</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
               <access>write-only</access>
             </field>
             <field>
               <name>CH1</name>
+              <description>""</description>
               <bitOffset>1</bitOffset>
               <bitWidth>1</bitWidth>
               <access>write-only</access>
             </field>
             <field>
               <name>CH2</name>
+              <description>""</description>
               <bitOffset>2</bitOffset>
               <bitWidth>1</bitWidth>
               <access>write-only</access>
             </field>
             <field>
               <name>CH3</name>
+              <description>""</description>
               <bitOffset>3</bitOffset>
               <bitWidth>1</bitWidth>
               <access>write-only</access>
             </field>
             <field>
               <name>CH4</name>
+              <description>""</description>
               <bitOffset>4</bitOffset>
               <bitWidth>1</bitWidth>
               <access>write-only</access>
             </field>
             <field>
               <name>CH5</name>
+              <description>""</description>
               <bitOffset>5</bitOffset>
               <bitWidth>1</bitWidth>
               <access>write-only</access>
             </field>
             <field>
               <name>CH6</name>
+              <description>""</description>
               <bitOffset>6</bitOffset>
               <bitWidth>1</bitWidth>
               <access>write-only</access>
             </field>
             <field>
               <name>CH7</name>
+              <description>""</description>
               <bitOffset>7</bitOffset>
               <bitWidth>1</bitWidth>
               <access>write-only</access>
             </field>
             <field>
               <name>CH8</name>
+              <description>""</description>
               <bitOffset>8</bitOffset>
               <bitWidth>1</bitWidth>
               <access>write-only</access>
             </field>
             <field>
               <name>CH9</name>
+              <description>""</description>
               <bitOffset>9</bitOffset>
               <bitWidth>1</bitWidth>
               <access>write-only</access>
             </field>
             <field>
               <name>CH10</name>
+              <description>""</description>
               <bitOffset>10</bitOffset>
               <bitWidth>1</bitWidth>
               <access>write-only</access>
             </field>
             <field>
               <name>CH11</name>
+              <description>""</description>
               <bitOffset>11</bitOffset>
               <bitWidth>1</bitWidth>
               <access>write-only</access>
             </field>
             <field>
               <name>CH12</name>
+              <description>""</description>
               <bitOffset>12</bitOffset>
               <bitWidth>1</bitWidth>
               <access>write-only</access>
             </field>
             <field>
               <name>CH13</name>
+              <description>""</description>
               <bitOffset>13</bitOffset>
               <bitWidth>1</bitWidth>
               <access>write-only</access>
             </field>
             <field>
               <name>CH14</name>
+              <description>""</description>
               <bitOffset>14</bitOffset>
               <bitWidth>1</bitWidth>
               <access>write-only</access>
             </field>
             <field>
               <name>CH15</name>
+              <description>""</description>
               <bitOffset>15</bitOffset>
               <bitWidth>1</bitWidth>
               <access>write-only</access>
             </field>
             <field>
               <name>SCANCOMPLETE</name>
+              <description>""</description>
               <bitOffset>16</bitOffset>
               <bitWidth>1</bitWidth>
               <access>write-only</access>
             </field>
             <field>
               <name>DEC</name>
+              <description>""</description>
               <bitOffset>17</bitOffset>
               <bitWidth>1</bitWidth>
               <access>write-only</access>
             </field>
             <field>
               <name>DECERR</name>
+              <description>""</description>
               <bitOffset>18</bitOffset>
               <bitWidth>1</bitWidth>
               <access>write-only</access>
             </field>
             <field>
               <name>BUFDATAV</name>
+              <description>""</description>
               <bitOffset>19</bitOffset>
               <bitWidth>1</bitWidth>
               <access>write-only</access>
             </field>
             <field>
               <name>BUFLEVEL</name>
+              <description>""</description>
               <bitOffset>20</bitOffset>
               <bitWidth>1</bitWidth>
               <access>write-only</access>
             </field>
             <field>
               <name>BUFOF</name>
+              <description>""</description>
               <bitOffset>21</bitOffset>
               <bitWidth>1</bitWidth>
               <access>write-only</access>
             </field>
             <field>
               <name>CNTOF</name>
+              <description>""</description>
               <bitOffset>22</bitOffset>
               <bitWidth>1</bitWidth>
               <access>write-only</access>
@@ -21129,138 +21197,161 @@
           <fields>
             <field>
               <name>CH0</name>
+              <description>""</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
             </field>
             <field>
               <name>CH1</name>
+              <description>""</description>
               <bitOffset>1</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
             </field>
             <field>
               <name>CH2</name>
+              <description>""</description>
               <bitOffset>2</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
             </field>
             <field>
               <name>CH3</name>
+              <description>""</description>
               <bitOffset>3</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
             </field>
             <field>
               <name>CH4</name>
+              <description>""</description>
               <bitOffset>4</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
             </field>
             <field>
               <name>CH5</name>
+              <description>""</description>
               <bitOffset>5</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
             </field>
             <field>
               <name>CH6</name>
+              <description>""</description>
               <bitOffset>6</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
             </field>
             <field>
               <name>CH7</name>
+              <description>""</description>
               <bitOffset>7</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
             </field>
             <field>
               <name>CH8</name>
+              <description>""</description>
               <bitOffset>8</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
             </field>
             <field>
               <name>CH9</name>
+              <description>""</description>
               <bitOffset>9</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
             </field>
             <field>
               <name>CH10</name>
+              <description>""</description>
               <bitOffset>10</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
             </field>
             <field>
               <name>CH11</name>
+              <description>""</description>
               <bitOffset>11</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
             </field>
             <field>
               <name>CH12</name>
+              <description>""</description>
               <bitOffset>12</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
             </field>
             <field>
               <name>CH13</name>
+              <description>""</description>
               <bitOffset>13</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
             </field>
             <field>
               <name>CH14</name>
+              <description>""</description>
               <bitOffset>14</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
             </field>
             <field>
               <name>CH15</name>
+              <description>""</description>
               <bitOffset>15</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
             </field>
             <field>
               <name>SCANCOMPLETE</name>
+              <description>""</description>
               <bitOffset>16</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
             </field>
             <field>
               <name>DEC</name>
+              <description>""</description>
               <bitOffset>17</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
             </field>
             <field>
               <name>DECERR</name>
+              <description>""</description>
               <bitOffset>18</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
             </field>
             <field>
               <name>BUFDATAV</name>
+              <description>""</description>
               <bitOffset>19</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
             </field>
             <field>
               <name>BUFLEVEL</name>
+              <description>""</description>
               <bitOffset>20</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
             </field>
             <field>
               <name>BUFOF</name>
+              <description>""</description>
               <bitOffset>21</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
             </field>
             <field>
               <name>CNTOF</name>
+              <description>""</description>
               <bitOffset>22</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
@@ -26431,6 +26522,7 @@
     </peripheral>
     <peripheral>
       <name>RTC</name>
+      <version>4.2.0</version>
       <description>RTC</description>
       <baseAddress>0x40080000</baseAddress>
       <addressBlock>
@@ -26711,6 +26803,7 @@
     </peripheral>
     <peripheral>
       <name>LETIMER0</name>
+      <version>4.2.0</version>
       <description>LETIMER0</description>
       <baseAddress>0x40082000</baseAddress>
       <addressBlock>
@@ -27337,6 +27430,7 @@
     </peripheral>
     <peripheral>
       <name>EBI</name>
+      <version>4.2.0</version>
       <description>EBI</description>
       <baseAddress>0x40008000</baseAddress>
       <addressBlock>
@@ -29599,6 +29693,7 @@
     </peripheral>
     <peripheral>
       <name>USART0</name>
+      <version>4.2.0</version>
       <description>USART0</description>
       <baseAddress>0x4000C000</baseAddress>
       <addressBlock>
@@ -31455,6 +31550,7 @@
     </peripheral>
     <peripheral>
       <name>USART1</name>
+      <version>4.2.0</version>
       <description>USART1</description>
       <baseAddress>0x4000C400</baseAddress>
       <addressBlock>
@@ -33311,6 +33407,7 @@
     </peripheral>
     <peripheral>
       <name>USART2</name>
+      <version>4.2.0</version>
       <description>USART2</description>
       <baseAddress>0x4000C800</baseAddress>
       <addressBlock>
@@ -35167,6 +35264,7 @@
     </peripheral>
     <peripheral>
       <name>UART0</name>
+      <version>4.2.0</version>
       <description>UART0</description>
       <baseAddress>0x4000E000</baseAddress>
       <addressBlock>
@@ -37023,6 +37121,7 @@
     </peripheral>
     <peripheral>
       <name>UART1</name>
+      <version>4.2.0</version>
       <description>UART1</description>
       <baseAddress>0x4000E400</baseAddress>
       <addressBlock>
@@ -38879,6 +38978,7 @@
     </peripheral>
     <peripheral>
       <name>TIMER0</name>
+      <version>4.2.0</version>
       <description>TIMER0</description>
       <baseAddress>0x40010000</baseAddress>
       <addressBlock>
@@ -41194,10 +41294,12 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>UNLOCKED</name>
+                  <description>""</description>
                   <value>0x00000000</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>LOCKED</name>
+                  <description>""</description>
                   <value>0x00000001</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -41208,6 +41310,7 @@
     </peripheral>
     <peripheral>
       <name>TIMER1</name>
+      <version>4.2.0</version>
       <description>TIMER1</description>
       <baseAddress>0x40010400</baseAddress>
       <addressBlock>
@@ -43523,10 +43626,12 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>UNLOCKED</name>
+                  <description>""</description>
                   <value>0x00000000</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>LOCKED</name>
+                  <description>""</description>
                   <value>0x00000001</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -43537,6 +43642,7 @@
     </peripheral>
     <peripheral>
       <name>TIMER2</name>
+      <version>4.2.0</version>
       <description>TIMER2</description>
       <baseAddress>0x40010800</baseAddress>
       <addressBlock>
@@ -45852,10 +45958,12 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>UNLOCKED</name>
+                  <description>""</description>
                   <value>0x00000000</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>LOCKED</name>
+                  <description>""</description>
                   <value>0x00000001</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -45866,6 +45974,7 @@
     </peripheral>
     <peripheral>
       <name>TIMER3</name>
+      <version>4.2.0</version>
       <description>TIMER3</description>
       <baseAddress>0x40010C00</baseAddress>
       <addressBlock>
@@ -48181,10 +48290,12 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>UNLOCKED</name>
+                  <description>""</description>
                   <value>0x00000000</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>LOCKED</name>
+                  <description>""</description>
                   <value>0x00000001</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -48195,6 +48306,7 @@
     </peripheral>
     <peripheral>
       <name>ACMP0</name>
+      <version>4.2.0</version>
       <description>ACMP0</description>
       <baseAddress>0x40001000</baseAddress>
       <addressBlock>
@@ -48739,6 +48851,7 @@
     </peripheral>
     <peripheral>
       <name>ACMP1</name>
+      <version>4.2.0</version>
       <description>ACMP1</description>
       <baseAddress>0x40001400</baseAddress>
       <addressBlock>
@@ -49283,6 +49396,7 @@
     </peripheral>
     <peripheral>
       <name>I2C0</name>
+      <version>4.2.0</version>
       <description>I2C0</description>
       <baseAddress>0x4000A000</baseAddress>
       <addressBlock>
@@ -50359,6 +50473,7 @@
     </peripheral>
     <peripheral>
       <name>I2C1</name>
+      <version>4.2.0</version>
       <description>I2C1</description>
       <baseAddress>0x4000A400</baseAddress>
       <addressBlock>
@@ -51435,6 +51550,7 @@
     </peripheral>
     <peripheral>
       <name>GPIO</name>
+      <version>4.2.0</version>
       <description>GPIO</description>
       <baseAddress>0x40006000</baseAddress>
       <addressBlock>
@@ -61937,10 +62053,12 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>UNLOCKED</name>
+                  <description>""</description>
                   <value>0x00000000</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>LOCKED</name>
+                  <description>""</description>
                   <value>0x00000001</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -62137,6 +62255,7 @@
     </peripheral>
     <peripheral>
       <name>VCMP</name>
+      <version>4.2.0</version>
       <description>VCMP</description>
       <baseAddress>0x40000000</baseAddress>
       <addressBlock>
@@ -62412,6 +62531,7 @@
     </peripheral>
     <peripheral>
       <name>PRS</name>
+      <version>4.2.0</version>
       <description>PRS</description>
       <baseAddress>0x400CC000</baseAddress>
       <addressBlock>
@@ -64868,6 +64988,7 @@
     </peripheral>
     <peripheral>
       <name>LEUART0</name>
+      <version>4.2.0</version>
       <description>LEUART0</description>
       <baseAddress>0x40084000</baseAddress>
       <addressBlock>
@@ -65934,6 +66055,7 @@
     </peripheral>
     <peripheral>
       <name>LEUART1</name>
+      <version>4.2.0</version>
       <description>LEUART1</description>
       <baseAddress>0x40084400</baseAddress>
       <addressBlock>
@@ -67000,6 +67122,7 @@
     </peripheral>
     <peripheral>
       <name>PCNT0</name>
+      <version>4.2.0</version>
       <description>PCNT0</description>
       <baseAddress>0x40086000</baseAddress>
       <addressBlock>
@@ -67680,6 +67803,7 @@
     </peripheral>
     <peripheral>
       <name>PCNT1</name>
+      <version>4.2.0</version>
       <description>PCNT1</description>
       <baseAddress>0x40086400</baseAddress>
       <addressBlock>
@@ -68360,6 +68484,7 @@
     </peripheral>
     <peripheral>
       <name>PCNT2</name>
+      <version>4.2.0</version>
       <description>PCNT2</description>
       <baseAddress>0x40086800</baseAddress>
       <addressBlock>
@@ -69040,6 +69165,7 @@
     </peripheral>
     <peripheral>
       <name>ADC0</name>
+      <version>4.2.0</version>
       <description>ADC0</description>
       <baseAddress>0x40002000</baseAddress>
       <addressBlock>
@@ -69130,6 +69256,7 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>NODIVISION</name>
+                  <description>""</description>
                   <value>0x00000000</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -70149,6 +70276,7 @@
     </peripheral>
     <peripheral>
       <name>DAC0</name>
+      <version>4.2.0</version>
       <description>DAC0</description>
       <baseAddress>0x40004000</baseAddress>
       <addressBlock>
@@ -70284,6 +70412,7 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>NODIVISION</name>
+                  <description>""</description>
                   <value>0x00000000</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -71668,6 +71797,7 @@
     </peripheral>
     <peripheral>
       <name>LCD</name>
+      <version>4.2.0</version>
       <description>LCD</description>
       <baseAddress>0x4008A000</baseAddress>
       <addressBlock>
@@ -71850,26 +71980,32 @@
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>LEVEL1</name>
+                  <description>""</description>
                   <value>0x00000001</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>LEVEL2</name>
+                  <description>""</description>
                   <value>0x00000002</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>LEVEL3</name>
+                  <description>""</description>
                   <value>0x00000003</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>LEVEL4</name>
+                  <description>""</description>
                   <value>0x00000004</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>LEVEL5</name>
+                  <description>""</description>
                   <value>0x00000005</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>LEVEL6</name>
+                  <description>""</description>
                   <value>0x00000006</value>
                 </enumeratedValue>
                 <enumeratedValue>
@@ -72637,6 +72773,7 @@
     </peripheral>
     <peripheral>
       <name>BURTC</name>
+      <version>4.2.0</version>
       <description>BURTC</description>
       <baseAddress>0x40081000</baseAddress>
       <addressBlock>
@@ -73061,10 +73198,12 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>UNLOCKED</name>
+                  <description>""</description>
                   <value>0x00000000</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>LOCKED</name>
+                  <description>""</description>
                   <value>0x00000001</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -75550,6 +75689,7 @@
     </peripheral>
     <peripheral>
       <name>WDOG</name>
+      <version>4.2.0</version>
       <description>WDOG</description>
       <baseAddress>0x40088000</baseAddress>
       <addressBlock>
@@ -75696,6 +75836,7 @@
     </peripheral>
     <peripheral>
       <name>ETM</name>
+      <version>4.2.0</version>
       <description>ETM</description>
       <baseAddress>0xE0041000</baseAddress>
       <addressBlock>
@@ -75989,6 +76130,13 @@
               <description>Maximum Port Size</description>
               <bitOffset>0</bitOffset>
               <bitWidth>3</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>Reserved</name>
+              <description>Reserved</description>
+              <bitOffset>3</bitOffset>
+              <bitWidth>1</bitWidth>
               <access>read-only</access>
             </field>
             <field>
@@ -76928,12 +77076,6 @@
   </peripherals>
 <!-- vendorExtions is _reqiuired_ to pass through Schema validation -->
   <vendorExtensions>
-    <name>Copyright 2021 Silicon Laboratories, Inc.</name>
-    <flashBaseAddress>0x00000000</flashBaseAddress>
-    <flashSize>0x00100000</flashSize>
-    <flashAccessTypes>rx</flashAccessTypes>
-    <sramBaseAddress>0x20000000</sramBaseAddress>
-    <sramSize>0x00020000</sramSize>
-    <sramAccessTypes>rwx</sramAccessTypes>
+    <name>(C) Copyright Silicon Laboratories, Inc. 2015</name>
   </vendorExtensions>
 </device>

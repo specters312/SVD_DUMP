@@ -354,12 +354,12 @@
                 <enumeratedValue>
                   <name>00</name>
                   <description>Core and system clock divider (OUTDIV1) is 0x7 (divide by 8) when LPBOOT1=0 or 0x1 (divide by 2) when LPBOOT1=1.</description>
-                  <value>#0</value>
+                  <value>#00</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>01</name>
                   <description>Core and system clock divider (OUTDIV1) is 0x3 (divide by 4) when LPBOOT1=0 or 0x0 (divide by 1) when LPBOOT1=1.</description>
-                  <value>#1</value>
+                  <value>#01</value>
                 </enumeratedValue>
               </enumeratedValues>
             </field>
@@ -373,12 +373,12 @@
                 <enumeratedValue>
                   <name>00</name>
                   <description>NMI interrupts are always blocked</description>
-                  <value>#0</value>
+                  <value>#00</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>01</name>
                   <description>NMI_b pin/interrupts reset default to enabled</description>
-                  <value>#1</value>
+                  <value>#01</value>
                 </enumeratedValue>
               </enumeratedValues>
             </field>
@@ -392,12 +392,12 @@
                 <enumeratedValue>
                   <name>00</name>
                   <description>RESET pin is disabled following a POR and cannot be enabled as reset function</description>
-                  <value>#0</value>
+                  <value>#00</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>01</name>
                   <description>RESET_b pin is dedicated</description>
-                  <value>#1</value>
+                  <value>#01</value>
                 </enumeratedValue>
               </enumeratedValues>
             </field>
@@ -411,12 +411,12 @@
                 <enumeratedValue>
                   <name>00</name>
                   <description>Core and system clock divider (OUTDIV1) is 0x7 (divide by 8) when LPBOOT0=0 or 0x3 (divide by 4) when LPBOOT0=1.</description>
-                  <value>#0</value>
+                  <value>#00</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>01</name>
                   <description>Core and system clock divider (OUTDIV1) is 0x1 (divide by 2) when LPBOOT0=0 or 0x0 (divide by 1) when LPBOOT0=1.</description>
-                  <value>#1</value>
+                  <value>#01</value>
                 </enumeratedValue>
               </enumeratedValues>
             </field>
@@ -430,12 +430,12 @@
                 <enumeratedValue>
                   <name>00</name>
                   <description>Slower initialization</description>
-                  <value>#0</value>
+                  <value>#00</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>01</name>
                   <description>Fast Initialization</description>
-                  <value>#1</value>
+                  <value>#01</value>
                 </enumeratedValue>
               </enumeratedValues>
             </field>
@@ -481,7 +481,7 @@
           <fields>
             <field>
               <name>SAR</name>
-              <description>Each SAR contains the byte address used by the DMA controller to read data</description>
+              <description>no description available</description>
               <bitOffset>0</bitOffset>
               <bitWidth>32</bitWidth>
               <access>read-write</access>
@@ -499,7 +499,7 @@
           <fields>
             <field>
               <name>DAR</name>
-              <description>Each DAR contains the byte address used by the DMA controller to write data</description>
+              <description>no description available</description>
               <bitOffset>0</bitOffset>
               <bitWidth>32</bitWidth>
               <access>read-write</access>
@@ -517,7 +517,7 @@
           <fields>
             <field>
               <name>BCR</name>
-              <description>This field contains the number of bytes yet to be transferred for a given block</description>
+              <description>no description available</description>
               <bitOffset>0</bitOffset>
               <bitWidth>24</bitWidth>
               <access>read-write</access>
@@ -1163,7 +1163,7 @@
           <fields>
             <field>
               <name>SAR</name>
-              <description>Each SAR contains the byte address used by the DMA controller to read data</description>
+              <description>no description available</description>
               <bitOffset>0</bitOffset>
               <bitWidth>32</bitWidth>
               <access>read-write</access>
@@ -1181,7 +1181,7 @@
           <fields>
             <field>
               <name>DAR</name>
-              <description>Each DAR contains the byte address used by the DMA controller to write data</description>
+              <description>no description available</description>
               <bitOffset>0</bitOffset>
               <bitWidth>32</bitWidth>
               <access>read-write</access>
@@ -1199,7 +1199,7 @@
           <fields>
             <field>
               <name>BCR</name>
-              <description>This field contains the number of bytes yet to be transferred for a given block</description>
+              <description>no description available</description>
               <bitOffset>0</bitOffset>
               <bitWidth>24</bitWidth>
               <access>read-write</access>
@@ -1845,7 +1845,7 @@
           <fields>
             <field>
               <name>SAR</name>
-              <description>Each SAR contains the byte address used by the DMA controller to read data</description>
+              <description>no description available</description>
               <bitOffset>0</bitOffset>
               <bitWidth>32</bitWidth>
               <access>read-write</access>
@@ -1863,7 +1863,7 @@
           <fields>
             <field>
               <name>DAR</name>
-              <description>Each DAR contains the byte address used by the DMA controller to write data</description>
+              <description>no description available</description>
               <bitOffset>0</bitOffset>
               <bitWidth>32</bitWidth>
               <access>read-write</access>
@@ -1881,7 +1881,7 @@
           <fields>
             <field>
               <name>BCR</name>
-              <description>This field contains the number of bytes yet to be transferred for a given block</description>
+              <description>no description available</description>
               <bitOffset>0</bitOffset>
               <bitWidth>24</bitWidth>
               <access>read-write</access>
@@ -2527,7 +2527,7 @@
           <fields>
             <field>
               <name>SAR</name>
-              <description>Each SAR contains the byte address used by the DMA controller to read data</description>
+              <description>no description available</description>
               <bitOffset>0</bitOffset>
               <bitWidth>32</bitWidth>
               <access>read-write</access>
@@ -2545,7 +2545,7 @@
           <fields>
             <field>
               <name>DAR</name>
-              <description>Each DAR contains the byte address used by the DMA controller to write data</description>
+              <description>no description available</description>
               <bitOffset>0</bitOffset>
               <bitWidth>32</bitWidth>
               <access>read-write</access>
@@ -2563,7 +2563,7 @@
           <fields>
             <field>
               <name>BCR</name>
-              <description>This field contains the number of bytes yet to be transferred for a given block</description>
+              <description>no description available</description>
               <bitOffset>0</bitOffset>
               <bitWidth>24</bitWidth>
               <access>read-write</access>
@@ -3555,7 +3555,7 @@
           <fields>
             <field>
               <name>CCOBn</name>
-              <description>The FCCOB register provides a command code and relevant parameters to the memory controller</description>
+              <description>no description available</description>
               <bitOffset>0</bitOffset>
               <bitWidth>8</bitWidth>
               <access>read-write</access>
@@ -6575,7 +6575,7 @@
           <fields>
             <field>
               <name>CLPD</name>
-              <description>Calibration Value</description>
+              <description>no description available</description>
               <bitOffset>0</bitOffset>
               <bitWidth>6</bitWidth>
               <access>read-write</access>
@@ -6593,7 +6593,7 @@
           <fields>
             <field>
               <name>CLPS</name>
-              <description>Calibration Value</description>
+              <description>no description available</description>
               <bitOffset>0</bitOffset>
               <bitWidth>6</bitWidth>
               <access>read-write</access>
@@ -6611,7 +6611,7 @@
           <fields>
             <field>
               <name>CLP4</name>
-              <description>Calibration Value</description>
+              <description>no description available</description>
               <bitOffset>0</bitOffset>
               <bitWidth>10</bitWidth>
               <access>read-write</access>
@@ -6629,7 +6629,7 @@
           <fields>
             <field>
               <name>CLP3</name>
-              <description>Calibration Value</description>
+              <description>no description available</description>
               <bitOffset>0</bitOffset>
               <bitWidth>9</bitWidth>
               <access>read-write</access>
@@ -6647,7 +6647,7 @@
           <fields>
             <field>
               <name>CLP2</name>
-              <description>Calibration Value</description>
+              <description>no description available</description>
               <bitOffset>0</bitOffset>
               <bitWidth>8</bitWidth>
               <access>read-write</access>
@@ -6665,7 +6665,7 @@
           <fields>
             <field>
               <name>CLP1</name>
-              <description>Calibration Value</description>
+              <description>no description available</description>
               <bitOffset>0</bitOffset>
               <bitWidth>7</bitWidth>
               <access>read-write</access>
@@ -6683,7 +6683,7 @@
           <fields>
             <field>
               <name>CLP0</name>
-              <description>Calibration Value</description>
+              <description>no description available</description>
               <bitOffset>0</bitOffset>
               <bitWidth>6</bitWidth>
               <access>read-write</access>
@@ -6701,7 +6701,7 @@
           <fields>
             <field>
               <name>CLMD</name>
-              <description>Calibration Value</description>
+              <description>no description available</description>
               <bitOffset>0</bitOffset>
               <bitWidth>6</bitWidth>
               <access>read-write</access>
@@ -6719,7 +6719,7 @@
           <fields>
             <field>
               <name>CLMS</name>
-              <description>Calibration Value</description>
+              <description>no description available</description>
               <bitOffset>0</bitOffset>
               <bitWidth>6</bitWidth>
               <access>read-write</access>
@@ -6737,7 +6737,7 @@
           <fields>
             <field>
               <name>CLM4</name>
-              <description>Calibration Value</description>
+              <description>no description available</description>
               <bitOffset>0</bitOffset>
               <bitWidth>10</bitWidth>
               <access>read-write</access>
@@ -6755,7 +6755,7 @@
           <fields>
             <field>
               <name>CLM3</name>
-              <description>Calibration Value</description>
+              <description>no description available</description>
               <bitOffset>0</bitOffset>
               <bitWidth>9</bitWidth>
               <access>read-write</access>
@@ -6773,7 +6773,7 @@
           <fields>
             <field>
               <name>CLM2</name>
-              <description>Calibration Value</description>
+              <description>no description available</description>
               <bitOffset>0</bitOffset>
               <bitWidth>8</bitWidth>
               <access>read-write</access>
@@ -6791,7 +6791,7 @@
           <fields>
             <field>
               <name>CLM1</name>
-              <description>Calibration Value</description>
+              <description>no description available</description>
               <bitOffset>0</bitOffset>
               <bitWidth>7</bitWidth>
               <access>read-write</access>
@@ -6809,7 +6809,7 @@
           <fields>
             <field>
               <name>CLM0</name>
-              <description>Calibration Value</description>
+              <description>no description available</description>
               <bitOffset>0</bitOffset>
               <bitWidth>6</bitWidth>
               <access>read-write</access>
@@ -7488,7 +7488,7 @@
           <fields>
             <field>
               <name>DATA0</name>
-              <description>When the DAC buffer is not enabled, DATA[11:0] controls the output voltage based on the following formula: V out = V in * (1 + DACDAT0[11:0])/4096 When the DAC buffer is enabled, DATA is mapped to the 16-word buffer</description>
+              <description>no description available</description>
               <bitOffset>0</bitOffset>
               <bitWidth>8</bitWidth>
               <access>read-write</access>
@@ -7509,7 +7509,7 @@
           <fields>
             <field>
               <name>DATA1</name>
-              <description>When the DAC Buffer is not enabled, DATA[11:0] controls the output voltage based on the following formula</description>
+              <description>no description available</description>
               <bitOffset>0</bitOffset>
               <bitWidth>4</bitWidth>
               <access>read-write</access>
@@ -10451,7 +10451,7 @@
           <fields>
             <field>
               <name>MAXADDR1</name>
-              <description>This field concatenated with leading zeros plus the value of the MAXADDR1 field indicates the first invalid address of the second program flash block (flash block 1)</description>
+              <description>no description available</description>
               <bitOffset>16</bitOffset>
               <bitWidth>7</bitWidth>
               <access>read-only</access>
@@ -13950,7 +13950,7 @@
                 <enumeratedValue>
                   <name>0</name>
                   <description>No filter/bypass</description>
-                  <value>#0000</value>
+                  <value>#0</value>
                 </enumeratedValue>
               </enumeratedValues>
             </field>
@@ -14242,7 +14242,7 @@
           <fields>
             <field>
               <name>SSLT</name>
-              <description>Most significant byte of SCL low timeout value that determines the timeout period of SCL low.</description>
+              <description>no description available</description>
               <bitOffset>0</bitOffset>
               <bitWidth>8</bitWidth>
               <access>read-write</access>
@@ -14260,7 +14260,7 @@
           <fields>
             <field>
               <name>SSLT</name>
-              <description>Least significant byte of SCL low timeout value that determines the timeout period of SCL low.</description>
+              <description>no description available</description>
               <bitOffset>0</bitOffset>
               <bitWidth>8</bitWidth>
               <access>read-write</access>
@@ -14809,7 +14809,7 @@
                 <enumeratedValue>
                   <name>0</name>
                   <description>No filter/bypass</description>
-                  <value>#0000</value>
+                  <value>#0</value>
                 </enumeratedValue>
               </enumeratedValues>
             </field>
@@ -15101,7 +15101,7 @@
           <fields>
             <field>
               <name>SSLT</name>
-              <description>Most significant byte of SCL low timeout value that determines the timeout period of SCL low.</description>
+              <description>no description available</description>
               <bitOffset>0</bitOffset>
               <bitWidth>8</bitWidth>
               <access>read-write</access>
@@ -15119,7 +15119,7 @@
           <fields>
             <field>
               <name>SSLT</name>
-              <description>Least significant byte of SCL low timeout value that determines the timeout period of SCL low.</description>
+              <description>no description available</description>
               <bitOffset>0</bitOffset>
               <bitWidth>8</bitWidth>
               <access>read-write</access>
@@ -16038,56 +16038,56 @@
           <fields>
             <field>
               <name>R0T0</name>
-              <description>Read receive data buffer 0 or write transmit data buffer 0.</description>
+              <description>no description available</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
             </field>
             <field>
               <name>R1T1</name>
-              <description>Read receive data buffer 1 or write transmit data buffer 1.</description>
+              <description>no description available</description>
               <bitOffset>1</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
             </field>
             <field>
               <name>R2T2</name>
-              <description>Read receive data buffer 2 or write transmit data buffer 2.</description>
+              <description>no description available</description>
               <bitOffset>2</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
             </field>
             <field>
               <name>R3T3</name>
-              <description>Read receive data buffer 3 or write transmit data buffer 3.</description>
+              <description>no description available</description>
               <bitOffset>3</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
             </field>
             <field>
               <name>R4T4</name>
-              <description>Read receive data buffer 4 or write transmit data buffer 4.</description>
+              <description>no description available</description>
               <bitOffset>4</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
             </field>
             <field>
               <name>R5T5</name>
-              <description>Read receive data buffer 5 or write transmit data buffer 5.</description>
+              <description>no description available</description>
               <bitOffset>5</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
             </field>
             <field>
               <name>R6T6</name>
-              <description>Read receive data buffer 6 or write transmit data buffer 6.</description>
+              <description>no description available</description>
               <bitOffset>6</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
             </field>
             <field>
               <name>R7T7</name>
-              <description>Read receive data buffer 7 or write transmit data buffer 7.</description>
+              <description>no description available</description>
               <bitOffset>7</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
@@ -17186,56 +17186,56 @@
           <fields>
             <field>
               <name>R0T0</name>
-              <description>Read receive data buffer 0 or write transmit data buffer 0.</description>
+              <description>no description available</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
             </field>
             <field>
               <name>R1T1</name>
-              <description>Read receive data buffer 1 or write transmit data buffer 1.</description>
+              <description>no description available</description>
               <bitOffset>1</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
             </field>
             <field>
               <name>R2T2</name>
-              <description>Read receive data buffer 2 or write transmit data buffer 2.</description>
+              <description>no description available</description>
               <bitOffset>2</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
             </field>
             <field>
               <name>R3T3</name>
-              <description>Read receive data buffer 3 or write transmit data buffer 3.</description>
+              <description>no description available</description>
               <bitOffset>3</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
             </field>
             <field>
               <name>R4T4</name>
-              <description>Read receive data buffer 4 or write transmit data buffer 4.</description>
+              <description>no description available</description>
               <bitOffset>4</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
             </field>
             <field>
               <name>R5T5</name>
-              <description>Read receive data buffer 5 or write transmit data buffer 5.</description>
+              <description>no description available</description>
               <bitOffset>5</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
             </field>
             <field>
               <name>R6T6</name>
-              <description>Read receive data buffer 6 or write transmit data buffer 6.</description>
+              <description>no description available</description>
               <bitOffset>6</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
             </field>
             <field>
               <name>R7T7</name>
-              <description>Read receive data buffer 7 or write transmit data buffer 7.</description>
+              <description>no description available</description>
               <bitOffset>7</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
@@ -18185,56 +18185,56 @@
           <fields>
             <field>
               <name>R0T0</name>
-              <description>Read receive data buffer 0 or write transmit data buffer 0.</description>
+              <description>no description available</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
             </field>
             <field>
               <name>R1T1</name>
-              <description>Read receive data buffer 1 or write transmit data buffer 1.</description>
+              <description>no description available</description>
               <bitOffset>1</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
             </field>
             <field>
               <name>R2T2</name>
-              <description>Read receive data buffer 2 or write transmit data buffer 2.</description>
+              <description>no description available</description>
               <bitOffset>2</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
             </field>
             <field>
               <name>R3T3</name>
-              <description>Read receive data buffer 3 or write transmit data buffer 3.</description>
+              <description>no description available</description>
               <bitOffset>3</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
             </field>
             <field>
               <name>R4T4</name>
-              <description>Read receive data buffer 4 or write transmit data buffer 4.</description>
+              <description>no description available</description>
               <bitOffset>4</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
             </field>
             <field>
               <name>R5T5</name>
-              <description>Read receive data buffer 5 or write transmit data buffer 5.</description>
+              <description>no description available</description>
               <bitOffset>5</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
             </field>
             <field>
               <name>R6T6</name>
-              <description>Read receive data buffer 6 or write transmit data buffer 6.</description>
+              <description>no description available</description>
               <bitOffset>6</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
             </field>
             <field>
               <name>R7T7</name>
-              <description>Read receive data buffer 7 or write transmit data buffer 7.</description>
+              <description>no description available</description>
               <bitOffset>7</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
@@ -18897,7 +18897,7 @@
           <description>SPI Status Register</description>
           <addressOffset>0</addressOffset>
           <size>8</size>
-          <access>read-write</access>
+          <access>read-only</access>
           <resetValue>0x20</resetValue>
           <resetMask>0xFF</resetMask>
           <fields>
@@ -18944,7 +18944,7 @@
               <description>SPI Match Flag</description>
               <bitOffset>6</bitOffset>
               <bitWidth>1</bitWidth>
-              <access>read-write</access>
+              <access>read-only</access>
               <enumeratedValues>
                 <enumeratedValue>
                   <name>0</name>
@@ -19514,7 +19514,7 @@
           <description>SPI Status Register</description>
           <addressOffset>0</addressOffset>
           <size>8</size>
-          <access>read-write</access>
+          <access>read-only</access>
           <resetValue>0x20</resetValue>
           <resetMask>0xFF</resetMask>
           <fields>
@@ -19637,7 +19637,7 @@
               <description>SPI Match Flag</description>
               <bitOffset>6</bitOffset>
               <bitWidth>1</bitWidth>
-              <access>read-write</access>
+              <access>read-only</access>
               <enumeratedValues>
                 <enumeratedValue>
                   <name>0</name>
@@ -22293,7 +22293,7 @@
           <fields>
             <field>
               <name>PMSTAT</name>
-              <description>When debug is enabled, the PMSTAT will not update to STOP or VLPS When a PSTOP mode is enabled, the PMSTAT will not update to STOP or VLPS</description>
+              <description>no description available</description>
               <bitOffset>0</bitOffset>
               <bitWidth>7</bitWidth>
               <access>read-only</access>
@@ -23784,7 +23784,7 @@
           <fields>
             <field>
               <name>WRAP</name>
-              <description>This field is set to 1 automatically when the POINTER value wraps as determined by the MTB_MASTER[MASK] field in the MASTER Trace Control Register</description>
+              <description>no description available</description>
               <bitOffset>2</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
@@ -23869,14 +23869,14 @@
           <fields>
             <field>
               <name>AUTOSTOP</name>
-              <description>If this field is 1 and WATERMARK is equal to MTB_POSITION[POINTER], then MTB_MASTER[EN] is automatically set to 0</description>
+              <description>no description available</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
             </field>
             <field>
               <name>AUTOHALT</name>
-              <description>If this field is 1 and WATERMARK is equal to MTB_POSITION[POINTER], then MTB_MASTER[HALTREQ] is automatically set to 1</description>
+              <description>no description available</description>
               <bitOffset>1</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
@@ -23901,7 +23901,7 @@
           <fields>
             <field>
               <name>BASEADDR</name>
-              <description>This value is defined with a hardwired signal and the expression: 0x2000_0000 - (RAM_Size/4)</description>
+              <description>no description available</description>
               <bitOffset>0</bitOffset>
               <bitWidth>32</bitWidth>
               <access>read-only</access>
@@ -23919,7 +23919,7 @@
           <fields>
             <field>
               <name>MODECTRL</name>
-              <description>Hardwired to 0x0000_0000</description>
+              <description>no description available</description>
               <bitOffset>0</bitOffset>
               <bitWidth>32</bitWidth>
               <access>read-only</access>
@@ -23937,7 +23937,7 @@
           <fields>
             <field>
               <name>TAGSET</name>
-              <description>Hardwired to 0x0000_0000</description>
+              <description>no description available</description>
               <bitOffset>0</bitOffset>
               <bitWidth>32</bitWidth>
               <access>read-only</access>
@@ -23955,7 +23955,7 @@
           <fields>
             <field>
               <name>TAGCLEAR</name>
-              <description>Hardwired to 0x0000_0000</description>
+              <description>no description available</description>
               <bitOffset>0</bitOffset>
               <bitWidth>32</bitWidth>
               <access>read-only</access>
@@ -23973,7 +23973,7 @@
           <fields>
             <field>
               <name>LOCKACCESS</name>
-              <description>Hardwired to 0x0000_0000</description>
+              <description>no description available</description>
               <bitOffset>0</bitOffset>
               <bitWidth>32</bitWidth>
               <access>read-only</access>
@@ -23991,7 +23991,7 @@
           <fields>
             <field>
               <name>LOCKSTAT</name>
-              <description>Hardwired to 0x0000_0000</description>
+              <description>no description available</description>
               <bitOffset>0</bitOffset>
               <bitWidth>32</bitWidth>
               <access>read-only</access>
@@ -24009,28 +24009,28 @@
           <fields>
             <field>
               <name>BIT0</name>
-              <description>Connected to DBGEN.</description>
+              <description>no description available</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-only</access>
             </field>
             <field>
               <name>BIT1</name>
-              <description>Hardwired to 1.</description>
+              <description>no description available</description>
               <bitOffset>1</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-only</access>
             </field>
             <field>
               <name>BIT2</name>
-              <description>Connected to NIDEN or DBGEN signal.</description>
+              <description>no description available</description>
               <bitOffset>2</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-only</access>
             </field>
             <field>
               <name>BIT3</name>
-              <description>Hardwired to 1.</description>
+              <description>no description available</description>
               <bitOffset>3</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-only</access>
@@ -24048,7 +24048,7 @@
           <fields>
             <field>
               <name>DEVICEARCH</name>
-              <description>Hardwired to 0x4770_0A31.</description>
+              <description>no description available</description>
               <bitOffset>0</bitOffset>
               <bitWidth>32</bitWidth>
               <access>read-only</access>
@@ -24066,7 +24066,7 @@
           <fields>
             <field>
               <name>DEVICECFG</name>
-              <description>Hardwired to 0x0000_0000.</description>
+              <description>no description available</description>
               <bitOffset>0</bitOffset>
               <bitWidth>32</bitWidth>
               <access>read-only</access>
@@ -24084,7 +24084,7 @@
           <fields>
             <field>
               <name>DEVICETYPID</name>
-              <description>Hardwired to 0x0000_0031.</description>
+              <description>no description available</description>
               <bitOffset>0</bitOffset>
               <bitWidth>32</bitWidth>
               <access>read-only</access>
@@ -24105,7 +24105,7 @@
           <fields>
             <field>
               <name>PERIPHID</name>
-              <description>Peripheral ID4 is hardwired to 0x0000_0004; ID0 to 0x0000_0032; ID1 to 0x0000_00B9; ID2 to 0x0000_000B; and all the others to 0x0000_0000</description>
+              <description>no description available</description>
               <bitOffset>0</bitOffset>
               <bitWidth>32</bitWidth>
               <access>read-only</access>
@@ -24463,7 +24463,7 @@
           <fields>
             <field>
               <name>DEVICECFG</name>
-              <description>Hardwired to 0x0000_0000.</description>
+              <description>no description available</description>
               <bitOffset>0</bitOffset>
               <bitWidth>32</bitWidth>
               <access>read-only</access>
@@ -24481,7 +24481,7 @@
           <fields>
             <field>
               <name>DEVICETYPID</name>
-              <description>Hardwired to 0x0000_0004.</description>
+              <description>no description available</description>
               <bitOffset>0</bitOffset>
               <bitWidth>32</bitWidth>
               <access>read-only</access>
@@ -24502,7 +24502,7 @@
           <fields>
             <field>
               <name>PERIPHID</name>
-              <description>Peripheral ID1 is hardwired to 0x0000_00E0; ID2 to 0x0000_0008; and all the others to 0x0000_0000.</description>
+              <description>no description available</description>
               <bitOffset>0</bitOffset>
               <bitWidth>32</bitWidth>
               <access>read-only</access>
@@ -24575,7 +24575,7 @@
           <fields>
             <field>
               <name>MARK</name>
-              <description>Hardwired to 0x0000_0000</description>
+              <description>no description available</description>
               <bitOffset>0</bitOffset>
               <bitWidth>32</bitWidth>
               <access>read-only</access>
@@ -24593,7 +24593,7 @@
           <fields>
             <field>
               <name>SYSACCESS</name>
-              <description>Hardwired to 0x0000_0001</description>
+              <description>no description available</description>
               <bitOffset>0</bitOffset>
               <bitWidth>32</bitWidth>
               <access>read-only</access>
@@ -24614,7 +24614,7 @@
           <fields>
             <field>
               <name>PERIPHID</name>
-              <description>Peripheral ID1 is hardwired to 0x0000_00E0; ID2 to 0x0000_0008; and all the others to 0x0000_0000.</description>
+              <description>no description available</description>
               <bitOffset>0</bitOffset>
               <bitWidth>32</bitWidth>
               <access>read-only</access>

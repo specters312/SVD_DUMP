@@ -5,6 +5,16 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
   <name>STM32F40x</name>
   <version>1.5</version>
   <description>STM32F40x</description>
+  <cpu>
+    <name>CM4</name>
+    <revision>r1p1</revision>
+    <endian>little</endian>
+    <fpuPresent>true</fpuPresent>
+    <mpuPresent>false</mpuPresent>
+    <vtorPresent>true</vtorPresent>
+    <nvicPrioBits>4</nvicPrioBits>
+    <vendorSystickConfig>false</vendorSystickConfig>
+  </cpu>
   <!--Bus Interface Properties-->
   <!--Cortex-M4 is byte addressable-->
   <addressUnitBits>8</addressUnitBits>
@@ -25,11 +35,11 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
         <size>0x400</size>
         <usage>registers</usage>
       </addressBlock>
-      <interrupt>
-        <name>HASH_RNG_IRQ</name>
-        <description>Rng global interrupt</description>
-        <value>80</value>
-      </interrupt>
+<interrupt>
+<name>FPU</name>
+<description>FPU interrupt</description>
+<value>81</value>
+</interrupt>
       <registers>
         <register>
           <name>CR</name>
@@ -5058,6 +5068,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <bitOffset>26</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
+              <enumeratedValues>
+                <name>ENABLED</name>
+                <enumeratedValue>
+                  <name>Disabled</name>
+                  <description>Dsabled</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Enabled</name>
+                  <description>Enabled</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
               <name>PLLRDY</name>
@@ -5066,6 +5089,18 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <bitOffset>25</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Unlocked</name>
+                  <description>PLL Unlocked</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Locked</name>
+                  <description>PLL Locked</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
               <name>PLLON</name>
@@ -5073,6 +5108,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <bitOffset>24</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
+              <enumeratedValues derivedFrom="ENABLED">
+              </enumeratedValues>
             </field>
             <field>
               <name>CSSON</name>
@@ -5081,6 +5118,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <bitOffset>19</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
+              <enumeratedValues derivedFrom="ENABLED">
+              </enumeratedValues>
             </field>
             <field>
               <name>HSEBYP</name>
@@ -5088,13 +5127,26 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <bitOffset>18</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
+              <enumeratedValues derivedFrom="ENABLED">
+              </enumeratedValues>
             </field>
             <field>
               <name>HSERDY</name>
               <description>HSE clock ready flag</description>
               <bitOffset>17</bitOffset>
               <bitWidth>1</bitWidth>
-              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Notready</name>
+                  <description>HSE Not Ready</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Ready</name>
+                  <description>HSE Ready</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
               <name>HSEON</name>
@@ -5102,6 +5154,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <bitOffset>16</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
+              <enumeratedValues derivedFrom="ENABLED">
+              </enumeratedValues>
             </field>
             <field>
               <name>HSICAL</name>
@@ -5134,6 +5188,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
+              <enumeratedValues derivedFrom="ENABLED">
+              </enumeratedValues>
             </field>
           </fields>
         </register>
@@ -5153,6 +5209,13 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               clocks</description>
               <bitOffset>24</bitOffset>
               <bitWidth>4</bitWidth>
+              <access>read-write</access>
+              <writeConstraint>
+                <range>
+                  <minimum>2</minimum>
+                  <maximum>15</maximum>
+                </range>
+              </writeConstraint>
             </field>
             <field>
               <name>PLLSRC</name>
@@ -5160,6 +5223,18 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               entry clock source</description>
               <bitOffset>22</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Internal</name>
+                  <description> HSI oscillator clock / 2 </description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>External</name>
+                  <description>HSE oscillator clock </description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
               <name>PLLP</name>
@@ -5167,6 +5242,29 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               system clock</description>
               <bitOffset>16</bitOffset>
               <bitWidth>2</bitWidth>
+              <enumeratedValues>
+                <name>DIVFACTOR</name>
+                <enumeratedValue>
+                  <name>Div2</name>
+                  <description>Div by two</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Div4</name>
+                  <description>Div by four</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Div6</name>
+                  <description>Div by six</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Div8</name>
+                  <description>Div by eight</description>
+                  <value>3</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
               <name>PLLN</name>
@@ -5174,6 +5272,13 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               VCO</description>
               <bitOffset>6</bitOffset>
               <bitWidth>9</bitWidth>
+              <access>read-write</access>
+              <writeConstraint>
+                <range>
+                  <minimum>50</minimum>
+                  <maximum>432</maximum>
+                </range>
+              </writeConstraint>
             </field>
             <field>
               <name>PLLM</name>
@@ -5181,6 +5286,13 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               and audio PLL (PLLI2S) input clock</description>
               <bitOffset>0</bitOffset>
               <bitWidth>6</bitWidth>
+              <access>read-write</access>
+              <writeConstraint>
+                <range>
+                  <minimum>2</minimum>
+                  <maximum>63</maximum>
+                </range>
+              </writeConstraint>
             </field>
           </fields>
         </register>
@@ -5228,6 +5340,12 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <bitOffset>21</bitOffset>
               <bitWidth>2</bitWidth>
               <access>read-write</access>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>3</maximum>
+                </range>
+              </writeConstraint>
             </field>
             <field>
               <name>RTCPRE</name>
@@ -5236,6 +5354,12 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <bitOffset>16</bitOffset>
               <bitWidth>5</bitWidth>
               <access>read-write</access>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>31</maximum>
+                </range>
+              </writeConstraint>
             </field>
             <field>
               <name>PPRE2</name>
@@ -5244,6 +5368,33 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <bitOffset>13</bitOffset>
               <bitWidth>3</bitWidth>
               <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Div1</name>
+                  <description>HCLK not divided</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Div2</name>
+                  <description>HCLK divided by 2</description>
+                  <value>4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Div4</name>
+                  <description>HCLK divided by 4</description>
+                  <value>5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Div8</name>
+                  <description>HCLK divided by 8</description>
+                  <value>6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Div16</name>
+                  <description>HCLK divided by 16</description>
+                  <value>7</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
               <name>PPRE1</name>
@@ -5252,6 +5403,33 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <bitOffset>10</bitOffset>
               <bitWidth>3</bitWidth>
               <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Div1</name>
+                  <description>HCLK not divided</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Div2</name>
+                  <description>HCLK divided by 2</description>
+                  <value>4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Div4</name>
+                  <description>HCLK divided by 4</description>
+                  <value>5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Div8</name>
+                  <description>HCLK divided by 8</description>
+                  <value>6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Div16</name>
+                  <description>HCLK divided by 16</description>
+                  <value>7</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
               <name>HPRE</name>
@@ -5259,6 +5437,53 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <bitOffset>4</bitOffset>
               <bitWidth>4</bitWidth>
               <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Div1</name>
+                  <description>SYSCLK not divided</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Div2</name>
+                  <description>SYSCLK divided by 2</description>
+                  <value>8</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Div4</name>
+                  <description>SYSCLK divided by 4</description>
+                  <value>9</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Div8</name>
+                  <description>SYSCLK divided by 8</description>
+                  <value>10</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Div16</name>
+                  <description>SYSCLK divided by 16</description>
+                  <value>11</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Div64</name>
+                  <description>SYSCLK divided by 64</description>
+                  <value>12</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Div128</name>
+                  <description>SYSCLK divided by 128</description>
+                  <value>13</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Div256</name>
+                  <description>SYSCLK divided by 256</description>
+                  <value>14</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Div512</name>
+                  <description>SYSCLK divided by 512</description>
+                  <value>15</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
               <name>SWS</name>
@@ -5266,6 +5491,23 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <bitOffset>2</bitOffset>
               <bitWidth>2</bitWidth>
               <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Hsi</name>
+                  <description> HSI selected as system clock</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Hse</name>
+                  <description> HSE selected as system clock</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Pll</name>
+                  <description>PLL selected as system clock</description>
+                  <value>2</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
               <name>SW</name>
@@ -5273,6 +5515,23 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <bitOffset>0</bitOffset>
               <bitWidth>2</bitWidth>
               <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Hsi</name>
+                  <description> HSI selected as system clock</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Hse</name>
+                  <description> HSE selected as system clock</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Pll</name>
+                  <description>PLL selected as system clock</description>
+                  <value>2</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
           </fields>
         </register>
@@ -5820,18 +6079,35 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               enable</description>
               <bitOffset>30</bitOffset>
               <bitWidth>1</bitWidth>
+	      <enumeratedValues>
+		<name>ENABLED</name>
+                <enumeratedValue>
+                  <name>Disabled</name>
+                  <description>Clock disabled</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Enabled</name>
+                  <description>Clock enabled</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
               <name>OTGHSEN</name>
               <description>USB OTG HS clock enable</description>
               <bitOffset>29</bitOffset>
               <bitWidth>1</bitWidth>
+	      <enumeratedValues derivedFrom="ENABLED">
+              </enumeratedValues>
             </field>
             <field>
               <name>ETHMACPTPEN</name>
               <description>Ethernet PTP clock enable</description>
               <bitOffset>28</bitOffset>
               <bitWidth>1</bitWidth>
+	      <enumeratedValues derivedFrom="ENABLED">
+              </enumeratedValues>
             </field>
             <field>
               <name>ETHMACRXEN</name>
@@ -5839,6 +6115,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               enable</description>
               <bitOffset>27</bitOffset>
               <bitWidth>1</bitWidth>
+	      <enumeratedValues derivedFrom="ENABLED">
+              </enumeratedValues>
             </field>
             <field>
               <name>ETHMACTXEN</name>
@@ -5846,24 +6124,32 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               enable</description>
               <bitOffset>26</bitOffset>
               <bitWidth>1</bitWidth>
+	      <enumeratedValues derivedFrom="ENABLED">
+              </enumeratedValues>
             </field>
             <field>
               <name>ETHMACEN</name>
               <description>Ethernet MAC clock enable</description>
               <bitOffset>25</bitOffset>
               <bitWidth>1</bitWidth>
+	      <enumeratedValues derivedFrom="ENABLED">
+              </enumeratedValues>
             </field>
             <field>
               <name>DMA2EN</name>
               <description>DMA2 clock enable</description>
               <bitOffset>22</bitOffset>
               <bitWidth>1</bitWidth>
+	      <enumeratedValues derivedFrom="ENABLED">
+              </enumeratedValues>
             </field>
             <field>
               <name>DMA1EN</name>
               <description>DMA1 clock enable</description>
               <bitOffset>21</bitOffset>
               <bitWidth>1</bitWidth>
+	      <enumeratedValues derivedFrom="ENABLED">
+              </enumeratedValues>
             </field>
             <field>
               <name>BKPSRAMEN</name>
@@ -5871,66 +6157,88 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               enable</description>
               <bitOffset>18</bitOffset>
               <bitWidth>1</bitWidth>
+	      <enumeratedValues derivedFrom="ENABLED">
+              </enumeratedValues>
             </field>
             <field>
               <name>CRCEN</name>
               <description>CRC clock enable</description>
               <bitOffset>12</bitOffset>
               <bitWidth>1</bitWidth>
+	      <enumeratedValues derivedFrom="ENABLED">
+              </enumeratedValues>
             </field>
             <field>
               <name>GPIOIEN</name>
               <description>IO port I clock enable</description>
               <bitOffset>8</bitOffset>
               <bitWidth>1</bitWidth>
+	      <enumeratedValues derivedFrom="ENABLED">
+              </enumeratedValues>
             </field>
             <field>
               <name>GPIOHEN</name>
               <description>IO port H clock enable</description>
               <bitOffset>7</bitOffset>
               <bitWidth>1</bitWidth>
+	      <enumeratedValues derivedFrom="ENABLED">
+              </enumeratedValues>
             </field>
             <field>
               <name>GPIOGEN</name>
               <description>IO port G clock enable</description>
               <bitOffset>6</bitOffset>
               <bitWidth>1</bitWidth>
+	      <enumeratedValues derivedFrom="ENABLED">
+              </enumeratedValues>
             </field>
             <field>
               <name>GPIOFEN</name>
               <description>IO port F clock enable</description>
               <bitOffset>5</bitOffset>
               <bitWidth>1</bitWidth>
+	      <enumeratedValues derivedFrom="ENABLED">
+              </enumeratedValues>
             </field>
             <field>
               <name>GPIOEEN</name>
               <description>IO port E clock enable</description>
               <bitOffset>4</bitOffset>
               <bitWidth>1</bitWidth>
+	      <enumeratedValues derivedFrom="ENABLED">
+              </enumeratedValues>
             </field>
             <field>
               <name>GPIODEN</name>
               <description>IO port D clock enable</description>
               <bitOffset>3</bitOffset>
-              <bitWidth>1</bitWidth>
+	      <bitWidth>1</bitWidth>
+	      <enumeratedValues derivedFrom="ENABLED">
+              </enumeratedValues>
             </field>
             <field>
               <name>GPIOCEN</name>
               <description>IO port C clock enable</description>
               <bitOffset>2</bitOffset>
               <bitWidth>1</bitWidth>
+	      <enumeratedValues derivedFrom="ENABLED">
+              </enumeratedValues>
             </field>
             <field>
               <name>GPIOBEN</name>
               <description>IO port B clock enable</description>
               <bitOffset>1</bitOffset>
               <bitWidth>1</bitWidth>
+	      <enumeratedValues derivedFrom="ENABLED">
+              </enumeratedValues>
             </field>
             <field>
               <name>GPIOAEN</name>
               <description>IO port A clock enable</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
+	      <enumeratedValues derivedFrom="ENABLED">
+              </enumeratedValues>
             </field>
           </fields>
         </register>
@@ -5949,6 +6257,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <description>USB OTG FS clock enable</description>
               <bitOffset>7</bitOffset>
               <bitWidth>1</bitWidth>
+	      <enumeratedValues>
+		<name>ENABLED</name>
+                <enumeratedValue>
+                  <name>Disabled</name>
+                  <description>Clock disabled</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Enabled</name>
+                  <description>Clock enabled</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
               <name>RNGEN</name>
@@ -5956,12 +6277,16 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               enable</description>
               <bitOffset>6</bitOffset>
               <bitWidth>1</bitWidth>
+	      <enumeratedValues derivedFrom="ENABLED">
+              </enumeratedValues>
             </field>
             <field>
               <name>DCMIEN</name>
               <description>Camera interface enable</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
+	      <enumeratedValues derivedFrom="ENABLED">
+              </enumeratedValues>
             </field>
           </fields>
         </register>
@@ -5981,6 +6306,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               clock enable</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
+	      <enumeratedValues>
+		<name>ENABLED</name>
+                <enumeratedValue>
+                  <name>Disabled</name>
+                  <description>Clock disabled</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Enabled</name>
+                  <description>Clock enabled</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
           </fields>
         </register>
@@ -5999,6 +6337,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <description>DAC interface clock enable</description>
               <bitOffset>29</bitOffset>
               <bitWidth>1</bitWidth>
+	      <enumeratedValues>
+		<name>ENABLED</name>
+                <enumeratedValue>
+                  <name>Disabled</name>
+                  <description>Clock disabled</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Enabled</name>
+                  <description>Clock enabled</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
               <name>PWREN</name>
@@ -6006,72 +6357,96 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               enable</description>
               <bitOffset>28</bitOffset>
               <bitWidth>1</bitWidth>
+	      <enumeratedValues derivedFrom="ENABLED">
+              </enumeratedValues>
             </field>
             <field>
               <name>CAN2EN</name>
               <description>CAN 2 clock enable</description>
               <bitOffset>26</bitOffset>
               <bitWidth>1</bitWidth>
+	      <enumeratedValues derivedFrom="ENABLED">
+              </enumeratedValues>
             </field>
             <field>
               <name>CAN1EN</name>
               <description>CAN 1 clock enable</description>
               <bitOffset>25</bitOffset>
               <bitWidth>1</bitWidth>
+	      <enumeratedValues derivedFrom="ENABLED">
+              </enumeratedValues>
             </field>
             <field>
               <name>I2C3EN</name>
               <description>I2C3 clock enable</description>
               <bitOffset>23</bitOffset>
               <bitWidth>1</bitWidth>
+	      <enumeratedValues derivedFrom="ENABLED">
+              </enumeratedValues>
             </field>
             <field>
               <name>I2C2EN</name>
               <description>I2C2 clock enable</description>
               <bitOffset>22</bitOffset>
               <bitWidth>1</bitWidth>
+	      <enumeratedValues derivedFrom="ENABLED">
+              </enumeratedValues>
             </field>
             <field>
               <name>I2C1EN</name>
               <description>I2C1 clock enable</description>
               <bitOffset>21</bitOffset>
               <bitWidth>1</bitWidth>
+	      <enumeratedValues derivedFrom="ENABLED">
+              </enumeratedValues>
             </field>
             <field>
               <name>UART5EN</name>
               <description>UART5 clock enable</description>
               <bitOffset>20</bitOffset>
               <bitWidth>1</bitWidth>
+	      <enumeratedValues derivedFrom="ENABLED">
+              </enumeratedValues>
             </field>
             <field>
               <name>UART4EN</name>
               <description>UART4 clock enable</description>
               <bitOffset>19</bitOffset>
               <bitWidth>1</bitWidth>
+	      <enumeratedValues derivedFrom="ENABLED">
+              </enumeratedValues>
             </field>
             <field>
               <name>USART3EN</name>
               <description>USART3 clock enable</description>
               <bitOffset>18</bitOffset>
               <bitWidth>1</bitWidth>
+	      <enumeratedValues derivedFrom="ENABLED">
+              </enumeratedValues>
             </field>
             <field>
               <name>USART2EN</name>
               <description>USART 2 clock enable</description>
               <bitOffset>17</bitOffset>
               <bitWidth>1</bitWidth>
+	      <enumeratedValues derivedFrom="ENABLED">
+              </enumeratedValues>
             </field>
             <field>
               <name>SPI3EN</name>
               <description>SPI3 clock enable</description>
               <bitOffset>15</bitOffset>
               <bitWidth>1</bitWidth>
+	      <enumeratedValues derivedFrom="ENABLED">
+              </enumeratedValues>
             </field>
             <field>
               <name>SPI2EN</name>
               <description>SPI2 clock enable</description>
               <bitOffset>14</bitOffset>
               <bitWidth>1</bitWidth>
+	      <enumeratedValues derivedFrom="ENABLED">
+              </enumeratedValues>
             </field>
             <field>
               <name>WWDGEN</name>
@@ -6079,60 +6454,80 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               enable</description>
               <bitOffset>11</bitOffset>
               <bitWidth>1</bitWidth>
+	      <enumeratedValues derivedFrom="ENABLED">
+              </enumeratedValues>
             </field>
             <field>
               <name>TIM14EN</name>
               <description>TIM14 clock enable</description>
               <bitOffset>8</bitOffset>
               <bitWidth>1</bitWidth>
+	      <enumeratedValues derivedFrom="ENABLED">
+              </enumeratedValues>
             </field>
             <field>
               <name>TIM13EN</name>
               <description>TIM13 clock enable</description>
               <bitOffset>7</bitOffset>
               <bitWidth>1</bitWidth>
+	      <enumeratedValues derivedFrom="ENABLED">
+              </enumeratedValues>
             </field>
             <field>
               <name>TIM12EN</name>
               <description>TIM12 clock enable</description>
               <bitOffset>6</bitOffset>
               <bitWidth>1</bitWidth>
+	      <enumeratedValues derivedFrom="ENABLED">
+              </enumeratedValues>
             </field>
             <field>
               <name>TIM7EN</name>
               <description>TIM7 clock enable</description>
               <bitOffset>5</bitOffset>
               <bitWidth>1</bitWidth>
+	      <enumeratedValues derivedFrom="ENABLED">
+              </enumeratedValues>
             </field>
             <field>
               <name>TIM6EN</name>
               <description>TIM6 clock enable</description>
               <bitOffset>4</bitOffset>
               <bitWidth>1</bitWidth>
+	      <enumeratedValues derivedFrom="ENABLED">
+              </enumeratedValues>
             </field>
             <field>
               <name>TIM5EN</name>
               <description>TIM5 clock enable</description>
               <bitOffset>3</bitOffset>
               <bitWidth>1</bitWidth>
+	      <enumeratedValues derivedFrom="ENABLED">
+              </enumeratedValues>
             </field>
             <field>
               <name>TIM4EN</name>
               <description>TIM4 clock enable</description>
               <bitOffset>2</bitOffset>
               <bitWidth>1</bitWidth>
+	      <enumeratedValues derivedFrom="ENABLED">
+              </enumeratedValues>
             </field>
             <field>
               <name>TIM3EN</name>
               <description>TIM3 clock enable</description>
               <bitOffset>1</bitOffset>
               <bitWidth>1</bitWidth>
+	      <enumeratedValues derivedFrom="ENABLED">
+              </enumeratedValues>
             </field>
             <field>
               <name>TIM2EN</name>
               <description>TIM2 clock enable</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
+	      <enumeratedValues derivedFrom="ENABLED">
+              </enumeratedValues>
             </field>
           </fields>
         </register>
@@ -6151,18 +6546,35 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <description>TIM11 clock enable</description>
               <bitOffset>18</bitOffset>
               <bitWidth>1</bitWidth>
+	      <enumeratedValues>
+		<name>ENABLED</name>
+                <enumeratedValue>
+                  <name>Disabled</name>
+                  <description>Clock disabled</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Enabled</name>
+                  <description>Clock enabled</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
               <name>TIM10EN</name>
               <description>TIM10 clock enable</description>
               <bitOffset>17</bitOffset>
               <bitWidth>1</bitWidth>
+	      <enumeratedValues derivedFrom="ENABLED">
+              </enumeratedValues>
             </field>
             <field>
               <name>TIM9EN</name>
               <description>TIM9 clock enable</description>
               <bitOffset>16</bitOffset>
               <bitWidth>1</bitWidth>
+	      <enumeratedValues derivedFrom="ENABLED">
+              </enumeratedValues>
             </field>
             <field>
               <name>SYSCFGEN</name>
@@ -6170,60 +6582,80 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               enable</description>
               <bitOffset>14</bitOffset>
               <bitWidth>1</bitWidth>
+	      <enumeratedValues derivedFrom="ENABLED">
+              </enumeratedValues>
             </field>
             <field>
               <name>SPI1EN</name>
               <description>SPI1 clock enable</description>
               <bitOffset>12</bitOffset>
               <bitWidth>1</bitWidth>
+	      <enumeratedValues derivedFrom="ENABLED">
+              </enumeratedValues>
             </field>
             <field>
               <name>SDIOEN</name>
               <description>SDIO clock enable</description>
               <bitOffset>11</bitOffset>
               <bitWidth>1</bitWidth>
+	      <enumeratedValues derivedFrom="ENABLED">
+              </enumeratedValues>
             </field>
             <field>
               <name>ADC3EN</name>
               <description>ADC3 clock enable</description>
               <bitOffset>10</bitOffset>
               <bitWidth>1</bitWidth>
+	      <enumeratedValues derivedFrom="ENABLED">
+              </enumeratedValues>
             </field>
             <field>
               <name>ADC2EN</name>
               <description>ADC2 clock enable</description>
               <bitOffset>9</bitOffset>
               <bitWidth>1</bitWidth>
+	      <enumeratedValues derivedFrom="ENABLED">
+              </enumeratedValues>
             </field>
             <field>
               <name>ADC1EN</name>
               <description>ADC1 clock enable</description>
               <bitOffset>8</bitOffset>
               <bitWidth>1</bitWidth>
+	      <enumeratedValues derivedFrom="ENABLED">
+              </enumeratedValues>
             </field>
             <field>
               <name>USART6EN</name>
               <description>USART6 clock enable</description>
               <bitOffset>5</bitOffset>
               <bitWidth>1</bitWidth>
+	      <enumeratedValues derivedFrom="ENABLED">
+              </enumeratedValues>
             </field>
             <field>
               <name>USART1EN</name>
               <description>USART1 clock enable</description>
               <bitOffset>4</bitOffset>
               <bitWidth>1</bitWidth>
+	      <enumeratedValues derivedFrom="ENABLED">
+              </enumeratedValues>
             </field>
             <field>
               <name>TIM8EN</name>
               <description>TIM8 clock enable</description>
               <bitOffset>1</bitOffset>
               <bitWidth>1</bitWidth>
+	      <enumeratedValues derivedFrom="ENABLED">
+              </enumeratedValues>
             </field>
             <field>
               <name>TIM1EN</name>
               <description>TIM1 clock enable</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
+	      <enumeratedValues derivedFrom="ENABLED">
+              </enumeratedValues>
             </field>
           </fields>
         </register>
@@ -6958,6 +7390,29 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>30</bitOffset>
               <bitWidth>2</bitWidth>
+              <enumeratedValues>
+                <name>MODE</name>
+                <enumeratedValue>
+                  <name>Input</name>
+                  <description>Input mode (reset state)</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Output</name>
+                  <description>General purpose output mode</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Alternate</name>
+                  <description>Alternate function mode</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Analog</name>
+                  <description>Analog mode</description>
+                  <value>3</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
               <name>MODER14</name>
@@ -6965,6 +7420,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>28</bitOffset>
               <bitWidth>2</bitWidth>
+              <enumeratedValues derivedFrom="MODE">
+	      </enumeratedValues>
             </field>
             <field>
               <name>MODER13</name>
@@ -6972,6 +7429,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>26</bitOffset>
               <bitWidth>2</bitWidth>
+              <enumeratedValues derivedFrom="MODE">
+	      </enumeratedValues>
             </field>
             <field>
               <name>MODER12</name>
@@ -6979,6 +7438,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>24</bitOffset>
               <bitWidth>2</bitWidth>
+              <enumeratedValues derivedFrom="MODE">
+	      </enumeratedValues>
             </field>
             <field>
               <name>MODER11</name>
@@ -6986,6 +7447,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>22</bitOffset>
               <bitWidth>2</bitWidth>
+              <enumeratedValues derivedFrom="MODE">
+	      </enumeratedValues>
             </field>
             <field>
               <name>MODER10</name>
@@ -6993,6 +7456,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>20</bitOffset>
               <bitWidth>2</bitWidth>
+              <enumeratedValues derivedFrom="MODE">
+	      </enumeratedValues>
             </field>
             <field>
               <name>MODER9</name>
@@ -7000,6 +7465,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>18</bitOffset>
               <bitWidth>2</bitWidth>
+              <enumeratedValues derivedFrom="MODE">
+	      </enumeratedValues>
             </field>
             <field>
               <name>MODER8</name>
@@ -7007,6 +7474,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>16</bitOffset>
               <bitWidth>2</bitWidth>
+              <enumeratedValues derivedFrom="MODE">
+	      </enumeratedValues>
             </field>
             <field>
               <name>MODER7</name>
@@ -7014,6 +7483,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>14</bitOffset>
               <bitWidth>2</bitWidth>
+              <enumeratedValues derivedFrom="MODE">
+	      </enumeratedValues>
             </field>
             <field>
               <name>MODER6</name>
@@ -7021,6 +7492,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>12</bitOffset>
               <bitWidth>2</bitWidth>
+              <enumeratedValues derivedFrom="MODE">
+	      </enumeratedValues>
             </field>
             <field>
               <name>MODER5</name>
@@ -7028,6 +7501,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>10</bitOffset>
               <bitWidth>2</bitWidth>
+              <enumeratedValues derivedFrom="MODE">
+	      </enumeratedValues>
             </field>
             <field>
               <name>MODER4</name>
@@ -7035,6 +7510,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>8</bitOffset>
               <bitWidth>2</bitWidth>
+              <enumeratedValues derivedFrom="MODE">
+	      </enumeratedValues>
             </field>
             <field>
               <name>MODER3</name>
@@ -7042,6 +7519,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>6</bitOffset>
               <bitWidth>2</bitWidth>
+              <enumeratedValues derivedFrom="MODE">
+	      </enumeratedValues>
             </field>
             <field>
               <name>MODER2</name>
@@ -7049,6 +7528,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>4</bitOffset>
               <bitWidth>2</bitWidth>
+              <enumeratedValues derivedFrom="MODE">
+	      </enumeratedValues>
             </field>
             <field>
               <name>MODER1</name>
@@ -7056,6 +7537,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>2</bitOffset>
               <bitWidth>2</bitWidth>
+              <enumeratedValues derivedFrom="MODE">
+	      </enumeratedValues>
             </field>
             <field>
               <name>MODER0</name>
@@ -7063,6 +7546,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>0</bitOffset>
               <bitWidth>2</bitWidth>
+              <enumeratedValues derivedFrom="MODE">
+	      </enumeratedValues>
             </field>
           </fields>
         </register>
@@ -7699,6 +8184,15 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>31</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues>
+                <name>RESET</name>
+                <usage>write</usage>
+                <enumeratedValue>
+                  <name>Reset</name>
+                  <description>Resets the corresponding ODRx bit</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
               <name>BR14</name>
@@ -7706,6 +8200,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>30</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues derivedFrom="RESET">
+              </enumeratedValues>
             </field>
             <field>
               <name>BR13</name>
@@ -7713,6 +8209,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>29</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues derivedFrom="RESET">
+              </enumeratedValues>
             </field>
             <field>
               <name>BR12</name>
@@ -7720,6 +8218,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>28</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues derivedFrom="RESET">
+              </enumeratedValues>
             </field>
             <field>
               <name>BR11</name>
@@ -7727,6 +8227,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>27</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues derivedFrom="RESET">
+              </enumeratedValues>
             </field>
             <field>
               <name>BR10</name>
@@ -7734,6 +8236,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>26</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues derivedFrom="RESET">
+              </enumeratedValues>
             </field>
             <field>
               <name>BR9</name>
@@ -7741,6 +8245,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>25</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues derivedFrom="RESET">
+              </enumeratedValues>
             </field>
             <field>
               <name>BR8</name>
@@ -7748,6 +8254,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>24</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues derivedFrom="RESET">
+              </enumeratedValues>
             </field>
             <field>
               <name>BR7</name>
@@ -7755,6 +8263,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>23</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues derivedFrom="RESET">
+              </enumeratedValues>
             </field>
             <field>
               <name>BR6</name>
@@ -7762,6 +8272,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>22</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues derivedFrom="RESET">
+              </enumeratedValues>
             </field>
             <field>
               <name>BR5</name>
@@ -7769,6 +8281,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>21</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues derivedFrom="RESET">
+              </enumeratedValues>
             </field>
             <field>
               <name>BR4</name>
@@ -7776,6 +8290,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>20</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues derivedFrom="RESET">
+              </enumeratedValues>
             </field>
             <field>
               <name>BR3</name>
@@ -7783,6 +8299,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>19</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues derivedFrom="RESET">
+              </enumeratedValues>
             </field>
             <field>
               <name>BR2</name>
@@ -7790,6 +8308,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>18</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues derivedFrom="RESET">
+              </enumeratedValues>
             </field>
             <field>
               <name>BR1</name>
@@ -7797,6 +8317,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>17</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues derivedFrom="RESET">
+              </enumeratedValues>
             </field>
             <field>
               <name>BR0</name>
@@ -7804,6 +8326,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>16</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues derivedFrom="RESET">
+              </enumeratedValues>
             </field>
             <field>
               <name>BS15</name>
@@ -7811,6 +8335,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>15</bitOffset>
               <bitWidth>1</bitWidth>
+              <description>Port x set bit y (y=
+              0..15)</description>
+              <bitOffset>15</bitOffset>
+              <bitWidth>1</bitWidth>
+              <enumeratedValues>
+                <name>SET</name>
+                <usage>write</usage>
+                <enumeratedValue>
+                  <name>Set</name>
+                  <description>Sets the corresponding ODRx bit</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
               <name>BS14</name>
@@ -7818,6 +8355,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>14</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues derivedFrom="SET">
+              </enumeratedValues>
             </field>
             <field>
               <name>BS13</name>
@@ -7825,6 +8364,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>13</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues derivedFrom="SET">
+              </enumeratedValues>
             </field>
             <field>
               <name>BS12</name>
@@ -7832,6 +8373,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>12</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues derivedFrom="SET">
+              </enumeratedValues>
             </field>
             <field>
               <name>BS11</name>
@@ -7839,6 +8382,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>11</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues derivedFrom="SET">
+              </enumeratedValues>
             </field>
             <field>
               <name>BS10</name>
@@ -7846,6 +8391,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>10</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues derivedFrom="SET">
+              </enumeratedValues>
             </field>
             <field>
               <name>BS9</name>
@@ -7853,6 +8400,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>9</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues derivedFrom="SET">
+              </enumeratedValues>
             </field>
             <field>
               <name>BS8</name>
@@ -7860,6 +8409,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>8</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues derivedFrom="SET">
+              </enumeratedValues>
             </field>
             <field>
               <name>BS7</name>
@@ -7867,6 +8418,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>7</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues derivedFrom="SET">
+              </enumeratedValues>
             </field>
             <field>
               <name>BS6</name>
@@ -7874,6 +8427,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>6</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues derivedFrom="SET">
+              </enumeratedValues>
             </field>
             <field>
               <name>BS5</name>
@@ -7881,6 +8436,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>5</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues derivedFrom="SET">
+              </enumeratedValues>
             </field>
             <field>
               <name>BS4</name>
@@ -7888,6 +8445,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>4</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues derivedFrom="SET">
+              </enumeratedValues>
             </field>
             <field>
               <name>BS3</name>
@@ -7895,6 +8454,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>3</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues derivedFrom="SET">
+              </enumeratedValues>
             </field>
             <field>
               <name>BS2</name>
@@ -7902,6 +8463,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>2</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues derivedFrom="SET">
+              </enumeratedValues>
             </field>
             <field>
               <name>BS1</name>
@@ -7909,6 +8472,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>1</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues derivedFrom="SET">
+              </enumeratedValues>
             </field>
             <field>
               <name>BS0</name>
@@ -7916,6 +8481,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues derivedFrom="SET">
+              </enumeratedValues>
             </field>
           </fields>
         </register>
@@ -8238,6 +8805,29 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>30</bitOffset>
               <bitWidth>2</bitWidth>
+              <enumeratedValues>
+                <name>MODE</name>
+                <enumeratedValue>
+                  <name>Input</name>
+                  <description>Input mode (reset state)</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Output</name>
+                  <description>General purpose output mode</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Alternate</name>
+                  <description>Alternate function mode</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Analog</name>
+                  <description>Analog mode</description>
+                  <value>3</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
               <name>MODER14</name>
@@ -8245,6 +8835,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>28</bitOffset>
               <bitWidth>2</bitWidth>
+              <enumeratedValues derivedFrom="MODE">
+	      </enumeratedValues>
             </field>
             <field>
               <name>MODER13</name>
@@ -8252,6 +8844,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>26</bitOffset>
               <bitWidth>2</bitWidth>
+              <enumeratedValues derivedFrom="MODE">
+	      </enumeratedValues>
             </field>
             <field>
               <name>MODER12</name>
@@ -8259,6 +8853,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>24</bitOffset>
               <bitWidth>2</bitWidth>
+              <enumeratedValues derivedFrom="MODE">
+	      </enumeratedValues>
             </field>
             <field>
               <name>MODER11</name>
@@ -8266,6 +8862,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>22</bitOffset>
               <bitWidth>2</bitWidth>
+              <enumeratedValues derivedFrom="MODE">
+	      </enumeratedValues>
             </field>
             <field>
               <name>MODER10</name>
@@ -8273,6 +8871,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>20</bitOffset>
               <bitWidth>2</bitWidth>
+              <enumeratedValues derivedFrom="MODE">
+	      </enumeratedValues>
             </field>
             <field>
               <name>MODER9</name>
@@ -8280,6 +8880,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>18</bitOffset>
               <bitWidth>2</bitWidth>
+              <enumeratedValues derivedFrom="MODE">
+	      </enumeratedValues>
             </field>
             <field>
               <name>MODER8</name>
@@ -8287,6 +8889,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>16</bitOffset>
               <bitWidth>2</bitWidth>
+              <enumeratedValues derivedFrom="MODE">
+	      </enumeratedValues>
             </field>
             <field>
               <name>MODER7</name>
@@ -8294,6 +8898,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>14</bitOffset>
               <bitWidth>2</bitWidth>
+              <enumeratedValues derivedFrom="MODE">
+	      </enumeratedValues>
             </field>
             <field>
               <name>MODER6</name>
@@ -8301,6 +8907,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>12</bitOffset>
               <bitWidth>2</bitWidth>
+              <enumeratedValues derivedFrom="MODE">
+	      </enumeratedValues>
             </field>
             <field>
               <name>MODER5</name>
@@ -8308,6 +8916,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>10</bitOffset>
               <bitWidth>2</bitWidth>
+              <enumeratedValues derivedFrom="MODE">
+	      </enumeratedValues>
             </field>
             <field>
               <name>MODER4</name>
@@ -8315,6 +8925,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>8</bitOffset>
               <bitWidth>2</bitWidth>
+              <enumeratedValues derivedFrom="MODE">
+	      </enumeratedValues>
             </field>
             <field>
               <name>MODER3</name>
@@ -8322,6 +8934,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>6</bitOffset>
               <bitWidth>2</bitWidth>
+              <enumeratedValues derivedFrom="MODE">
+	      </enumeratedValues>
             </field>
             <field>
               <name>MODER2</name>
@@ -8329,6 +8943,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>4</bitOffset>
               <bitWidth>2</bitWidth>
+              <enumeratedValues derivedFrom="MODE">
+	      </enumeratedValues>
             </field>
             <field>
               <name>MODER1</name>
@@ -8336,6 +8952,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>2</bitOffset>
               <bitWidth>2</bitWidth>
+              <enumeratedValues derivedFrom="MODE">
+	      </enumeratedValues>
             </field>
             <field>
               <name>MODER0</name>
@@ -8343,6 +8961,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>0</bitOffset>
               <bitWidth>2</bitWidth>
+              <enumeratedValues derivedFrom="MODE">
+	      </enumeratedValues>
             </field>
           </fields>
         </register>
@@ -8979,6 +9599,15 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>31</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues>
+                <name>RESET</name>
+                <usage>write</usage>
+                <enumeratedValue>
+                  <name>Reset</name>
+                  <description>Resets the corresponding ODRx bit</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
               <name>BR14</name>
@@ -8986,6 +9615,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>30</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues derivedFrom="RESET">
+              </enumeratedValues>
             </field>
             <field>
               <name>BR13</name>
@@ -8993,6 +9624,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>29</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues derivedFrom="RESET">
+              </enumeratedValues>
             </field>
             <field>
               <name>BR12</name>
@@ -9000,6 +9633,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>28</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues derivedFrom="RESET">
+              </enumeratedValues>
             </field>
             <field>
               <name>BR11</name>
@@ -9007,6 +9642,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>27</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues derivedFrom="RESET">
+              </enumeratedValues>
             </field>
             <field>
               <name>BR10</name>
@@ -9014,6 +9651,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>26</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues derivedFrom="RESET">
+              </enumeratedValues>
             </field>
             <field>
               <name>BR9</name>
@@ -9021,6 +9660,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>25</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues derivedFrom="RESET">
+              </enumeratedValues>
             </field>
             <field>
               <name>BR8</name>
@@ -9028,6 +9669,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>24</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues derivedFrom="RESET">
+              </enumeratedValues>
             </field>
             <field>
               <name>BR7</name>
@@ -9035,6 +9678,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>23</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues derivedFrom="RESET">
+              </enumeratedValues>
             </field>
             <field>
               <name>BR6</name>
@@ -9042,6 +9687,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>22</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues derivedFrom="RESET">
+              </enumeratedValues>
             </field>
             <field>
               <name>BR5</name>
@@ -9049,6 +9696,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>21</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues derivedFrom="RESET">
+              </enumeratedValues>
             </field>
             <field>
               <name>BR4</name>
@@ -9056,6 +9705,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>20</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues derivedFrom="RESET">
+              </enumeratedValues>
             </field>
             <field>
               <name>BR3</name>
@@ -9063,6 +9714,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>19</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues derivedFrom="RESET">
+              </enumeratedValues>
             </field>
             <field>
               <name>BR2</name>
@@ -9070,6 +9723,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>18</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues derivedFrom="RESET">
+              </enumeratedValues>
             </field>
             <field>
               <name>BR1</name>
@@ -9077,6 +9732,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>17</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues derivedFrom="RESET">
+              </enumeratedValues>
             </field>
             <field>
               <name>BR0</name>
@@ -9084,6 +9741,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>16</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues derivedFrom="RESET">
+              </enumeratedValues>
             </field>
             <field>
               <name>BS15</name>
@@ -9091,6 +9750,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>15</bitOffset>
               <bitWidth>1</bitWidth>
+              <description>Port x set bit y (y=
+              0..15)</description>
+              <bitOffset>15</bitOffset>
+              <bitWidth>1</bitWidth>
+              <enumeratedValues>
+                <name>SET</name>
+                <usage>write</usage>
+                <enumeratedValue>
+                  <name>Set</name>
+                  <description>Sets the corresponding ODRx bit</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
               <name>BS14</name>
@@ -9098,6 +9770,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>14</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues derivedFrom="SET">
+              </enumeratedValues>
             </field>
             <field>
               <name>BS13</name>
@@ -9105,6 +9779,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>13</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues derivedFrom="SET">
+              </enumeratedValues>
             </field>
             <field>
               <name>BS12</name>
@@ -9112,6 +9788,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>12</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues derivedFrom="SET">
+              </enumeratedValues>
             </field>
             <field>
               <name>BS11</name>
@@ -9119,6 +9797,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>11</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues derivedFrom="SET">
+              </enumeratedValues>
             </field>
             <field>
               <name>BS10</name>
@@ -9126,6 +9806,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>10</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues derivedFrom="SET">
+              </enumeratedValues>
             </field>
             <field>
               <name>BS9</name>
@@ -9133,6 +9815,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>9</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues derivedFrom="SET">
+              </enumeratedValues>
             </field>
             <field>
               <name>BS8</name>
@@ -9140,6 +9824,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>8</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues derivedFrom="SET">
+              </enumeratedValues>
             </field>
             <field>
               <name>BS7</name>
@@ -9147,6 +9833,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>7</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues derivedFrom="SET">
+              </enumeratedValues>
             </field>
             <field>
               <name>BS6</name>
@@ -9154,6 +9842,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>6</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues derivedFrom="SET">
+              </enumeratedValues>
             </field>
             <field>
               <name>BS5</name>
@@ -9161,6 +9851,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>5</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues derivedFrom="SET">
+              </enumeratedValues>
             </field>
             <field>
               <name>BS4</name>
@@ -9168,6 +9860,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>4</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues derivedFrom="SET">
+              </enumeratedValues>
             </field>
             <field>
               <name>BS3</name>
@@ -9175,6 +9869,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>3</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues derivedFrom="SET">
+              </enumeratedValues>
             </field>
             <field>
               <name>BS2</name>
@@ -9182,6 +9878,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>2</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues derivedFrom="SET">
+              </enumeratedValues>
             </field>
             <field>
               <name>BS1</name>
@@ -9189,6 +9887,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>1</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues derivedFrom="SET">
+              </enumeratedValues>
             </field>
             <field>
               <name>BS0</name>
@@ -9196,6 +9896,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues derivedFrom="SET">
+              </enumeratedValues>
             </field>
           </fields>
         </register>
@@ -9494,6 +10196,29 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>30</bitOffset>
               <bitWidth>2</bitWidth>
+              <enumeratedValues>
+                <name>MODE</name>
+                <enumeratedValue>
+                  <name>Input</name>
+                  <description>Input mode (reset state)</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Output</name>
+                  <description>General purpose output mode</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Alternate</name>
+                  <description>Alternate function mode</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Analog</name>
+                  <description>Analog mode</description>
+                  <value>3</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
               <name>MODER14</name>
@@ -9501,6 +10226,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>28</bitOffset>
               <bitWidth>2</bitWidth>
+              <enumeratedValues derivedFrom="MODE">
+	      </enumeratedValues>
             </field>
             <field>
               <name>MODER13</name>
@@ -9508,6 +10235,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>26</bitOffset>
               <bitWidth>2</bitWidth>
+              <enumeratedValues derivedFrom="MODE">
+	      </enumeratedValues>
             </field>
             <field>
               <name>MODER12</name>
@@ -9515,6 +10244,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>24</bitOffset>
               <bitWidth>2</bitWidth>
+              <enumeratedValues derivedFrom="MODE">
+	      </enumeratedValues>
             </field>
             <field>
               <name>MODER11</name>
@@ -9522,6 +10253,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>22</bitOffset>
               <bitWidth>2</bitWidth>
+              <enumeratedValues derivedFrom="MODE">
+	      </enumeratedValues>
             </field>
             <field>
               <name>MODER10</name>
@@ -9529,6 +10262,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>20</bitOffset>
               <bitWidth>2</bitWidth>
+              <enumeratedValues derivedFrom="MODE">
+	      </enumeratedValues>
             </field>
             <field>
               <name>MODER9</name>
@@ -9536,6 +10271,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>18</bitOffset>
               <bitWidth>2</bitWidth>
+              <enumeratedValues derivedFrom="MODE">
+	      </enumeratedValues>
             </field>
             <field>
               <name>MODER8</name>
@@ -9543,6 +10280,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>16</bitOffset>
               <bitWidth>2</bitWidth>
+              <enumeratedValues derivedFrom="MODE">
+	      </enumeratedValues>
             </field>
             <field>
               <name>MODER7</name>
@@ -9550,6 +10289,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>14</bitOffset>
               <bitWidth>2</bitWidth>
+              <enumeratedValues derivedFrom="MODE">
+	      </enumeratedValues>
             </field>
             <field>
               <name>MODER6</name>
@@ -9557,6 +10298,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>12</bitOffset>
               <bitWidth>2</bitWidth>
+              <enumeratedValues derivedFrom="MODE">
+	      </enumeratedValues>
             </field>
             <field>
               <name>MODER5</name>
@@ -9564,6 +10307,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>10</bitOffset>
               <bitWidth>2</bitWidth>
+              <enumeratedValues derivedFrom="MODE">
+	      </enumeratedValues>
             </field>
             <field>
               <name>MODER4</name>
@@ -9571,6 +10316,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>8</bitOffset>
               <bitWidth>2</bitWidth>
+              <enumeratedValues derivedFrom="MODE">
+	      </enumeratedValues>
             </field>
             <field>
               <name>MODER3</name>
@@ -9578,6 +10325,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>6</bitOffset>
               <bitWidth>2</bitWidth>
+              <enumeratedValues derivedFrom="MODE">
+	      </enumeratedValues>
             </field>
             <field>
               <name>MODER2</name>
@@ -9585,6 +10334,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>4</bitOffset>
               <bitWidth>2</bitWidth>
+              <enumeratedValues derivedFrom="MODE">
+	      </enumeratedValues>
             </field>
             <field>
               <name>MODER1</name>
@@ -9592,6 +10343,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>2</bitOffset>
               <bitWidth>2</bitWidth>
+              <enumeratedValues derivedFrom="MODE">
+	      </enumeratedValues>
             </field>
             <field>
               <name>MODER0</name>
@@ -9599,6 +10352,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>0</bitOffset>
               <bitWidth>2</bitWidth>
+              <enumeratedValues derivedFrom="MODE">
+	      </enumeratedValues>
             </field>
           </fields>
         </register>
@@ -10235,6 +10990,15 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>31</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues>
+                <name>RESET</name>
+                <usage>write</usage>
+                <enumeratedValue>
+                  <name>Reset</name>
+                  <description>Resets the corresponding ODRx bit</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
               <name>BR14</name>
@@ -10242,6 +11006,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>30</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues derivedFrom="RESET">
+              </enumeratedValues>
             </field>
             <field>
               <name>BR13</name>
@@ -10249,6 +11015,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>29</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues derivedFrom="RESET">
+              </enumeratedValues>
             </field>
             <field>
               <name>BR12</name>
@@ -10256,6 +11024,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>28</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues derivedFrom="RESET">
+              </enumeratedValues>
             </field>
             <field>
               <name>BR11</name>
@@ -10263,6 +11033,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>27</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues derivedFrom="RESET">
+              </enumeratedValues>
             </field>
             <field>
               <name>BR10</name>
@@ -10270,6 +11042,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>26</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues derivedFrom="RESET">
+              </enumeratedValues>
             </field>
             <field>
               <name>BR9</name>
@@ -10277,6 +11051,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>25</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues derivedFrom="RESET">
+              </enumeratedValues>
             </field>
             <field>
               <name>BR8</name>
@@ -10284,6 +11060,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>24</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues derivedFrom="RESET">
+              </enumeratedValues>
             </field>
             <field>
               <name>BR7</name>
@@ -10291,6 +11069,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>23</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues derivedFrom="RESET">
+              </enumeratedValues>
             </field>
             <field>
               <name>BR6</name>
@@ -10298,6 +11078,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>22</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues derivedFrom="RESET">
+              </enumeratedValues>
             </field>
             <field>
               <name>BR5</name>
@@ -10305,6 +11087,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>21</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues derivedFrom="RESET">
+              </enumeratedValues>
             </field>
             <field>
               <name>BR4</name>
@@ -10312,6 +11096,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>20</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues derivedFrom="RESET">
+              </enumeratedValues>
             </field>
             <field>
               <name>BR3</name>
@@ -10319,6 +11105,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>19</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues derivedFrom="RESET">
+              </enumeratedValues>
             </field>
             <field>
               <name>BR2</name>
@@ -10326,6 +11114,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>18</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues derivedFrom="RESET">
+              </enumeratedValues>
             </field>
             <field>
               <name>BR1</name>
@@ -10333,6 +11123,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>17</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues derivedFrom="RESET">
+              </enumeratedValues>
             </field>
             <field>
               <name>BR0</name>
@@ -10340,6 +11132,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>16</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues derivedFrom="RESET">
+              </enumeratedValues>
             </field>
             <field>
               <name>BS15</name>
@@ -10347,6 +11141,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>15</bitOffset>
               <bitWidth>1</bitWidth>
+              <description>Port x set bit y (y=
+              0..15)</description>
+              <bitOffset>15</bitOffset>
+              <bitWidth>1</bitWidth>
+              <enumeratedValues>
+                <name>SET</name>
+                <usage>write</usage>
+                <enumeratedValue>
+                  <name>Set</name>
+                  <description>Sets the corresponding ODRx bit</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
               <name>BS14</name>
@@ -10354,6 +11161,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>14</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues derivedFrom="SET">
+              </enumeratedValues>
             </field>
             <field>
               <name>BS13</name>
@@ -10361,6 +11170,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>13</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues derivedFrom="SET">
+              </enumeratedValues>
             </field>
             <field>
               <name>BS12</name>
@@ -10368,6 +11179,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>12</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues derivedFrom="SET">
+              </enumeratedValues>
             </field>
             <field>
               <name>BS11</name>
@@ -10375,6 +11188,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>11</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues derivedFrom="SET">
+              </enumeratedValues>
             </field>
             <field>
               <name>BS10</name>
@@ -10382,6 +11197,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>10</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues derivedFrom="SET">
+              </enumeratedValues>
             </field>
             <field>
               <name>BS9</name>
@@ -10389,6 +11206,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>9</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues derivedFrom="SET">
+              </enumeratedValues>
             </field>
             <field>
               <name>BS8</name>
@@ -10396,6 +11215,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>8</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues derivedFrom="SET">
+              </enumeratedValues>
             </field>
             <field>
               <name>BS7</name>
@@ -10403,6 +11224,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>7</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues derivedFrom="SET">
+              </enumeratedValues>
             </field>
             <field>
               <name>BS6</name>
@@ -10410,6 +11233,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>6</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues derivedFrom="SET">
+              </enumeratedValues>
             </field>
             <field>
               <name>BS5</name>
@@ -10417,6 +11242,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>5</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues derivedFrom="SET">
+              </enumeratedValues>
             </field>
             <field>
               <name>BS4</name>
@@ -10424,6 +11251,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>4</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues derivedFrom="SET">
+              </enumeratedValues>
             </field>
             <field>
               <name>BS3</name>
@@ -10431,6 +11260,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>3</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues derivedFrom="SET">
+              </enumeratedValues>
             </field>
             <field>
               <name>BS2</name>
@@ -10438,6 +11269,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>2</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues derivedFrom="SET">
+              </enumeratedValues>
             </field>
             <field>
               <name>BS1</name>
@@ -10445,6 +11278,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>1</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues derivedFrom="SET">
+              </enumeratedValues>
             </field>
             <field>
               <name>BS0</name>
@@ -10452,6 +11287,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               0..15)</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues derivedFrom="SET">
+              </enumeratedValues>
             </field>
           </fields>
         </register>
@@ -10602,6 +11439,37 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               bit y (y = 0..7)</description>
               <bitOffset>28</bitOffset>
               <bitWidth>4</bitWidth>
+              <enumeratedValues>
+                <name>AF</name>
+                <enumeratedValue>
+                  <name>TIM1_CH1N</name>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>TIM3_CH2</name>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>TIM8_CH1N</name>
+                  <value>3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>SPI1_MOSI</name>
+                  <value>5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>TIM14_CH1</name>
+                  <value>9</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ETH_MII_RX_DV_ETH_RMMI_CRS_DV</name>
+                  <value>11</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>EVENTOUT</name>
+                  <value>15</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
               <name>AFRL6</name>
@@ -10609,6 +11477,37 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               bit y (y = 0..7)</description>
               <bitOffset>24</bitOffset>
               <bitWidth>4</bitWidth>
+              <enumeratedValues>
+                <name>AF</name>
+                <enumeratedValue>
+                  <name>TIM1_BKIN</name>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>TIM3_CH1</name>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>TIM8_BKIN</name>
+                  <value>3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>SPI1_MISO</name>
+                  <value>5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>TIM13_CH1</name>
+                  <value>9</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                <name>DCMI_PIXCK</name>
+                  <value>13</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>EVENTOUT</name>
+                  <value>15</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
               <name>AFRL5</name>
@@ -10616,6 +11515,29 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               bit y (y = 0..7)</description>
               <bitOffset>20</bitOffset>
               <bitWidth>4</bitWidth>
+              <enumeratedValues>
+                <name>AF</name>
+                <enumeratedValue>
+                  <name>TIM2_CH1_ETR</name>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>TIM8_CH1N</name>
+                  <value>3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>SPI1_SCK</name>
+                  <value>5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>OTG_HS_ULPI_CK</name>
+                  <value>10</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>EVENTOUT</name>
+                  <value>15</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
               <name>AFRL4</name>
@@ -10623,6 +11545,34 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               bit y (y = 0..7)</description>
               <bitOffset>16</bitOffset>
               <bitWidth>4</bitWidth>
+              <enumeratedValues>
+                <name>AF</name>
+                <enumeratedValue>
+                  <name>SPI1_NSS</name>
+                  <value>5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>SPI3_NSS_I2S3_WS</name>
+                  <value>6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>USART2_CK</name>
+                  <value>7</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>OTG_HS_SOF</name>
+                  <value>12</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DCMI_HSYNC</name>
+                  <value>13</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>EVENTOUT</name>
+                  <description>EVENTOUT</description>
+                  <value>15</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
               <name>AFRL3</name>
@@ -10630,6 +11580,38 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               bit y (y = 0..7)</description>
               <bitOffset>12</bitOffset>
               <bitWidth>4</bitWidth>
+              <enumeratedValues>
+                <name>AF</name>
+                <enumeratedValue>
+                  <name>TIM2_CH4</name>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>TIM5_CH5</name>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>TIM9_CH2</name>
+                  <value>3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>USART2_RX</name>
+                  <value>7</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>OTG_HS_ULPI_D0</name>
+                  <value>10</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ETH_MII_COL</name>
+                  <value>11</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>EVENTOUT</name>
+                  <description>EVENTOUT</description>
+                  <value>15</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
               <name>AFRL2</name>
@@ -10637,6 +11619,34 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               bit y (y = 0..7)</description>
               <bitOffset>8</bitOffset>
               <bitWidth>4</bitWidth>
+              <enumeratedValues>
+                <name>AF</name>
+                <enumeratedValue>
+                  <name>TIM2_CH3</name>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>TIM5_CH3</name>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>TIM9_CH1</name>
+                  <value>3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>USART2_TX</name>
+                  <value>7</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ETH_MDIO</name>
+                  <value>11</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>EVENTOUT</name>
+                  <description>EVENTOUT</description>
+                  <value>15</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
               <name>AFRL1</name>
@@ -10644,6 +11654,33 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               bit y (y = 0..7)</description>
               <bitOffset>4</bitOffset>
               <bitWidth>4</bitWidth>
+              <enumeratedValues>
+                <name>AF</name>
+                <enumeratedValue>
+                  <name>TIM2_CH2</name>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>TIM5_CH2</name>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>USART2_RTS</name>
+                  <value>7</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>UART4_RX</name>
+                  <value>8</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ETH_MII_RX_CLK_ETH_RMII_REF_CLK</name>
+                  <value>11</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>EVENTOUT</name>
+                  <value>15</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
               <name>AFRL0</name>
@@ -10651,6 +11688,37 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               bit y (y = 0..7)</description>
               <bitOffset>0</bitOffset>
               <bitWidth>4</bitWidth>
+              <enumeratedValues>
+                <name>AF</name>
+                <enumeratedValue>
+                  <name>TIM2_CH1_ETR</name>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>TIM5_CH1</name>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>TIM8_ETR</name>
+                  <value>3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>USART2_CTS</name>
+                  <value>7</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>UART4_TX</name>
+                  <value>8</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ETH_MII_CRS</name>
+                  <value>11</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>EVENTOUT</name>
+                  <value>15</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
           </fields>
         </register>
@@ -10670,6 +11738,29 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               bit y (y = 8..15)</description>
               <bitOffset>28</bitOffset>
               <bitWidth>4</bitWidth>
+              <enumeratedValues>
+                <name>AF</name>
+                <enumeratedValue>
+                  <name>JTDI</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>TIM2_CH1_TIM2_ETR</name>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>SPI1_NSS</name>
+                  <value>5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>SPI3_NSS_I2S3_WS</name>
+                  <value>6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>EVENTOUT</name>
+                  <value>15</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
               <name>AFRH14</name>
@@ -10677,6 +11768,17 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               bit y (y = 8..15)</description>
               <bitOffset>24</bitOffset>
               <bitWidth>4</bitWidth>
+              <enumeratedValues>
+                <name>AF</name>
+                <enumeratedValue>
+                  <name>JTCK_SWDCLK</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>EVENTOUT</name>
+                  <value>15</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
               <name>AFRH13</name>
@@ -10684,6 +11786,17 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               bit y (y = 8..15)</description>
               <bitOffset>20</bitOffset>
               <bitWidth>4</bitWidth>
+              <enumeratedValues>
+                <name>AF</name>
+                <enumeratedValue>
+                  <name>JTMS_SWDIO</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>EVENTOUT</name>
+                  <value>15</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
               <name>AFRH12</name>
@@ -10691,6 +11804,29 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               bit y (y = 8..15)</description>
               <bitOffset>16</bitOffset>
               <bitWidth>4</bitWidth>
+              <enumeratedValues>
+                <name>AF</name>
+                <enumeratedValue>
+                  <name>TIM1_ETR</name>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>USART1_RTS</name>
+                  <value>7</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>CAN1_TX</name>
+                  <value>9</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>OTG_FS_DP</name>
+                  <value>10</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>EVENTOUT</name>
+                  <value>15</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
               <name>AFRH11</name>
@@ -10698,6 +11834,29 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               bit y (y = 8..15)</description>
               <bitOffset>12</bitOffset>
               <bitWidth>4</bitWidth>
+              <enumeratedValues>
+                <name>AF</name>
+                <enumeratedValue>
+                  <name>TIM1_CH4</name>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>USART1_CTS</name>
+                  <value>7</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>CAN1_RX</name>
+                  <value>9</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>OTG_FS_DM</name>
+                  <value>10</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>EVENTOUT</name>
+                  <value>15</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
               <name>AFRH10</name>
@@ -10705,6 +11864,29 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               bit y (y = 8..15)</description>
               <bitOffset>8</bitOffset>
               <bitWidth>4</bitWidth>
+              <enumeratedValues>
+                <name>AF</name>
+                <enumeratedValue>
+                  <name>TIM1_CH3</name>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>USART1_RX</name>
+                  <value>7</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>OTG_FS_ID</name>
+                  <value>10</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DCMI_D1</name>
+                  <value>13</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>EVENTOUT</name>
+                  <value>15</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
               <name>AFRH9</name>
@@ -10712,6 +11894,29 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               bit y (y = 8..15)</description>
               <bitOffset>4</bitOffset>
               <bitWidth>4</bitWidth>
+              <enumeratedValues>
+                <name>AF</name>
+                <enumeratedValue>
+                  <name>TIM1_CH2</name>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>I2C3_SMBA</name>
+                  <value>4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>USART1_TX</name>
+                  <value>7</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DCMI_D0</name>
+                  <value>13</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>EVENTOUT</name>
+                  <value>15</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
               <name>AFRH8</name>
@@ -10719,6 +11924,33 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               bit y (y = 8..15)</description>
               <bitOffset>0</bitOffset>
               <bitWidth>4</bitWidth>
+              <enumeratedValues>
+                <name>AF</name>
+                <enumeratedValue>
+                  <name>MCO1</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>TIM1_CH1</name>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>I2C3_SCL</name>
+                  <value>4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>USART1_CK</name>
+                  <value>7</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>OTG_FS_SOF</name>
+                  <value>10</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>EVENTOUT</name>
+                  <value>15</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
           </fields>
         </register>
@@ -11050,6 +12282,50 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <description>Baud rate control</description>
               <bitOffset>3</bitOffset>
               <bitWidth>3</bitWidth>
+              <enumeratedValues>
+                <name>DIVFACTOR</name>
+                <description>Dividor factor for Baud rate</description>
+                <enumeratedValue>
+                  <name>Div2</name>
+                  <description>Div PCLK by two</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Div4</name>
+                  <description>Div PCLK by four</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Div8</name>
+                  <description>Div PCLK by eight</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Div16</name>
+                  <description>Div PCLK 16</description>
+                  <value>3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Div32</name>
+                  <description>Div PCLK 32</description>
+                  <value>4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Div64</name>
+                  <description>Div PCLK by 64</description>
+                  <value>5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Div128</name>
+                  <description>Div PCLK by 128</description>
+                  <value>6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Div256</name>
+                  <description>Div PCLK by 256</description>
+                  <value>7</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
               <name>MSTR</name>
@@ -11399,7 +12675,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
         <usage>registers</usage>
       </addressBlock>
       <interrupt>
-        <name>SDIO</name>
+        <name>SDIO_IRQ</name>
         <description>SDIO global interrupt</description>
         <value>49</value>
       </interrupt>
@@ -11418,18 +12694,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <description>PWRCTRL</description>
               <bitOffset>0</bitOffset>
               <bitWidth>2</bitWidth>
-              <enumeratedValues>
-                <enumeratedValue>
-                  <name>Power_OFF</name>
-                  <description>The clock to card is stopped.</description>
-                  <value>0</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>Power_ON</name>
-                  <description>The card is clocked.</description>
-                  <value>3</value>
-                </enumeratedValue>
-              </enumeratedValues>
             </field>
           </fields>
         </register>
@@ -11454,41 +12718,12 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               bit</description>
               <bitOffset>13</bitOffset>
               <bitWidth>1</bitWidth>
-              <enumeratedValues>
-                <enumeratedValue>
-                  <name>Edge_Rising</name>
-                  <description>Cmd and Data changed on the SDMMCCLK falling edge succeeding the rising edge of SDMMC_CK.</description>
-                  <value>0</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>Edge_Falling</name>
-                  <description>Cmd and Data changed on the SDMMC_CK falling edge.</description>
-                  <value>1</value>
-                </enumeratedValue>
-              </enumeratedValues>
             </field>
             <field>
               <name>WIDBUS</name>
               <description>Wide bus mode enable bit</description>
               <bitOffset>11</bitOffset>
               <bitWidth>2</bitWidth>
-              <enumeratedValues>
-                <enumeratedValue>
-                  <name>Bus_Wide_1b</name>
-                  <description>Default bus mode: SDMMC_D0 is used.</description>
-                  <value>0</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>Bus_Wide_4b</name>
-                  <description>4-wide bus mode: SDMMC_D[3:0] used.</description>
-                  <value>1</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>Bus_Wide_8b</name>
-                  <description>8-wide bus mode: SDMMC_D[7:0] used.</description>
-                  <value>2</value>
-                </enumeratedValue>
-              </enumeratedValues>
             </field>
             <field>
               <name>BYPASS</name>
@@ -11594,23 +12829,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <description>Wait for response bits</description>
               <bitOffset>6</bitOffset>
               <bitWidth>2</bitWidth>
-              <enumeratedValues>
-                <enumeratedValue>
-                  <name>No_Response</name>
-                  <description>No response, expect CMDSENT flag.</description>
-                  <value>0</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>Short_Response</name>
-                  <description>Short response, expect CMDREND or CCRCFAIL flag.</description>
-                  <value>1</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>Long_Response</name>
-                  <description>Long response, expect CMDREND or CCRCFAIL flag.</description>
-                  <value>3</value>
-                </enumeratedValue>
-              </enumeratedValues>
             </field>
             <field>
               <name>CMDINDEX</name>
@@ -11777,83 +12995,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <description>Data block size</description>
               <bitOffset>4</bitOffset>
               <bitWidth>4</bitWidth>
-              <enumeratedValues>
-                <enumeratedValue>
-                  <name>Block_1b</name>
-                  <description>Block length = 2**0 = 1 byte</description>
-                  <value>0</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>Block_2b</name>
-                  <description>Block length = 2**1 = 2 byte</description>
-                  <value>1</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>Block_4b</name>
-                  <description>Block length = 2**2 = 4 byte</description>
-                  <value>2</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>Block_8b</name>
-                  <description>Block length = 2**3 = 8 byte</description>
-                  <value>3</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>Block_16b</name>
-                  <description>Block length = 2**4 = 16 byte</description>
-                  <value>4</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>Block_32b</name>
-                  <description>Block length = 2**5 = 32 byte</description>
-                  <value>5</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>Block_64b</name>
-                  <description>Block length = 2**6 = 64 byte</description>
-                  <value>6</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>Block_128b</name>
-                  <description>Block length = 2**7 = 128 byte</description>
-                  <value>7</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>Block_256b</name>
-                  <description>Block length = 2**8 = 256 byte</description>
-                  <value>8</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>Block_512b</name>
-                  <description>Block length = 2**9 = 512 byte</description>
-                  <value>9</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>Block_1024b</name>
-                  <description>Block length = 2**10 = 1024 byte</description>
-                  <value>10</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>Block_2048b</name>
-                  <description>Block length = 2**11 = 2048 byte</description>
-                  <value>11</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>Block_4096b</name>
-                  <description>Block length = 2**12 = 4096 byte</description>
-                  <value>12</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>Block_8192b</name>
-                  <description>Block length = 2**13 = 8192 byte</description>
-                  <value>13</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>Block_16384b</name>
-                  <description>Block length = 2**14 = 16384 byte</description>
-                  <value>14</value>
-                </enumeratedValue>
-              </enumeratedValues>
             </field>
             <field>
               <name>DMAEN</name>
@@ -11867,18 +13008,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               or SDIO multibyte data transfer.</description>
               <bitOffset>2</bitOffset>
               <bitWidth>1</bitWidth>
-              <enumeratedValues>
-                <enumeratedValue>
-                  <name>Block</name>
-                  <description>Block data transfer</description>
-                  <value>0</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>Stream</name>
-                  <description>Stream or SDIO multibyte data transfer</description>
-                  <value>1</value>
-                </enumeratedValue>
-              </enumeratedValues>
             </field>
             <field>
               <name>DTDIR</name>
@@ -11886,18 +13015,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               selection</description>
               <bitOffset>1</bitOffset>
               <bitWidth>1</bitWidth>
-              <enumeratedValues>
-                <enumeratedValue>
-                  <name>Controller_To_Card</name>
-                  <description>Data is sent to the card</description>
-                  <value>0</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>Card_To_Controller</name>
-                  <description>Data is read from the card</description>
-                  <value>1</value>
-                </enumeratedValue>
-              </enumeratedValues>
             </field>
             <field>
               <name>DTEN</name>
@@ -12672,58 +13789,10 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <resetValue>0x00000000</resetValue>
           <fields>
             <field>
-              <name>SMP18</name>
-              <description>Sample time bits</description>
-              <bitOffset>24</bitOffset>
-              <bitWidth>3</bitWidth>
-            </field>
-            <field>
-              <name>SMP17</name>
-              <description>Sample time bits</description>
-              <bitOffset>21</bitOffset>
-              <bitWidth>3</bitWidth>
-            </field>
-            <field>
-              <name>SMP16</name>
-              <description>Sample time bits</description>
-              <bitOffset>18</bitOffset>
-              <bitWidth>3</bitWidth>
-            </field>
-            <field>
-              <name>SMP15</name>
-              <description>Sample time bits</description>
-              <bitOffset>15</bitOffset>
-              <bitWidth>3</bitWidth>
-            </field>
-            <field>
-              <name>SMP14</name>
-              <description>Sample time bits</description>
-              <bitOffset>12</bitOffset>
-              <bitWidth>3</bitWidth>
-            </field>
-            <field>
-              <name>SMP13</name>
-              <description>Sample time bits</description>
-              <bitOffset>9</bitOffset>
-              <bitWidth>3</bitWidth>
-            </field>
-            <field>
-              <name>SMP12</name>
-              <description>Sample time bits</description>
-              <bitOffset>6</bitOffset>
-              <bitWidth>3</bitWidth>
-            </field>
-            <field>
-              <name>SMP11</name>
-              <description>Sample time bits</description>
-              <bitOffset>3</bitOffset>
-              <bitWidth>3</bitWidth>
-            </field>
-            <field>
-              <name>SMP10</name>
+              <name>SMPx_x</name>
               <description>Sample time bits</description>
               <bitOffset>0</bitOffset>
-              <bitWidth>3</bitWidth>
+              <bitWidth>32</bitWidth>
             </field>
           </fields>
         </register>
@@ -12737,64 +13806,10 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <resetValue>0x00000000</resetValue>
           <fields>
             <field>
-              <name>SMP9</name>
-              <description>Sample time bits</description>
-              <bitOffset>27</bitOffset>
-              <bitWidth>3</bitWidth>
-            </field>
-            <field>
-              <name>SMP8</name>
-              <description>Sample time bits</description>
-              <bitOffset>24</bitOffset>
-              <bitWidth>3</bitWidth>
-            </field>
-            <field>
-              <name>SMP7</name>
-              <description>Sample time bits</description>
-              <bitOffset>21</bitOffset>
-              <bitWidth>3</bitWidth>
-            </field>
-            <field>
-              <name>SMP6</name>
-              <description>Sample time bits</description>
-              <bitOffset>18</bitOffset>
-              <bitWidth>3</bitWidth>
-            </field>
-            <field>
-              <name>SMP5</name>
-              <description>Sample time bits</description>
-              <bitOffset>15</bitOffset>
-              <bitWidth>3</bitWidth>
-            </field>
-            <field>
-              <name>SMP4</name>
-              <description>Sample time bits</description>
-              <bitOffset>12</bitOffset>
-              <bitWidth>3</bitWidth>
-            </field>
-            <field>
-              <name>SMP3</name>
-              <description>Sample time bits</description>
-              <bitOffset>9</bitOffset>
-              <bitWidth>3</bitWidth>
-            </field>
-            <field>
-              <name>SMP2</name>
-              <description>Sample time bits</description>
-              <bitOffset>6</bitOffset>
-              <bitWidth>3</bitWidth>
-            </field>
-            <field>
-              <name>SMP1</name>
-              <description>Sample time bits</description>
-              <bitOffset>3</bitOffset>
-              <bitWidth>3</bitWidth>
-            </field>
-            <field>
-              <name>SMP0</name>
+              <name>SMPx_x</name>
               <description>Sample time bits</description>
               <bitOffset>0</bitOffset>
-              <bitWidth>3</bitWidth>
+              <bitWidth>32</bitWidth>
             </field>
           </fields>
         </register>
@@ -14098,12 +15113,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <access>read-write</access>
           <resetValue>0x00000000</resetValue>
           <fields>
-            <field>
-              <name>VOS</name>
-              <description>Regulator voltage scaling mode</description>
-              <bitOffset>14</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
             <field>
               <name>FPDS</name>
               <description>Flash power down in Stop
@@ -21945,6 +22954,18 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <description>One-pulse mode</description>
               <bitOffset>3</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Continuous</name>
+                  <description>Counter is not stopped at update event</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>OnePulse</name>
+                  <description>Counter stops counting at the next update event (clearing the CEN bit)</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
               <name>URS</name>
@@ -21963,6 +22984,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <description>Counter enable</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
+	      <enumeratedValues>
+		<name>ENABLED</name>
+                <enumeratedValue>
+                  <name>Disabled</name>
+                  <description>Counter disabled</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Enabled</name>
+                  <description>Counter enabled</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
           </fields>
         </register>
@@ -22003,6 +23037,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <description>Update interrupt enable</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
+	      <enumeratedValues>
+		<name>ENABLED</name>
+                <enumeratedValue>
+                  <name>Disabled</name>
+                  <description>Clock disabled</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Enabled</name>
+                  <description>Clock enabled</description>
+                  <value>1</value>
+                </enumeratedValue>
+	      </enumeratedValues>
             </field>
           </fields>
         </register>
@@ -22020,6 +23067,27 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <description>Update interrupt flag</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues>
+                <usage>read</usage>
+                <enumeratedValue>
+                  <name>NoUpdate</name>
+                  <description>No update occurred</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Pending</name>
+                  <description>Update interrupt pending</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+              <enumeratedValues>
+                <usage>write</usage>
+                <enumeratedValue>
+                  <name>Clear</name>
+                  <description>Clears the update interrupt flag</description>
+                  <value>0</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
           </fields>
         </register>
@@ -22071,6 +23139,12 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <description>Prescaler value</description>
               <bitOffset>0</bitOffset>
               <bitWidth>16</bitWidth>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>65535</maximum>
+                </range>
+              </writeConstraint>
             </field>
           </fields>
         </register>
@@ -22088,6 +23162,12 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <description>Low Auto-reload value</description>
               <bitOffset>0</bitOffset>
               <bitWidth>16</bitWidth>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>65535</maximum>
+                </range>
+              </writeConstraint>
             </field>
           </fields>
         </register>
@@ -24113,7 +25193,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
     </peripheral>
     <peripheral>
       <name>CRC</name>
-      <description>Cyclic Redundancy Check (CRC) unit</description>
+      <description>Cryptographic processor</description>
       <groupName>CRC</groupName>
       <baseAddress>0x40023000</baseAddress>
       <addressBlock>
@@ -27761,8 +28841,9 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <bitWidth>16</bitWidth>
             </field>
             <field>
-              <name>OEPM</name>
-              <description>OUT EP interrupt mask bits</description>
+              <name>OEPINT</name>
+              <description>OUT endpoint interrupt
+              bits</description>
               <bitOffset>16</bitOffset>
               <bitWidth>16</bitWidth>
             </field>
@@ -34253,7 +35334,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
           </fields>
 		</register>
-
+		
 		<register>
           <name>F7R1</name>
           <displayName>F7R1</displayName>
@@ -42831,6 +43912,12 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <bitOffset>0</bitOffset>
               <bitWidth>3</bitWidth>
               <access>read-write</access>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>7</maximum>
+                </range>
+              </writeConstraint>
             </field>
             <field>
               <name>PRFTEN</name>
@@ -42838,6 +43925,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <bitOffset>8</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
+              <enumeratedValues>
+                <name>ENABLED</name>
+                <enumeratedValue>
+                  <name>Disabled</name>
+                  <description>Dsabled</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Enabled</name>
+                  <description>Enabled</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
               <name>ICEN</name>
@@ -42845,6 +43945,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <bitOffset>9</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
+              <enumeratedValues derivedFrom="ENABLED">
+              </enumeratedValues>
             </field>
             <field>
               <name>DCEN</name>
@@ -42852,6 +43954,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <bitOffset>10</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
+              <enumeratedValues derivedFrom="ENABLED">
+              </enumeratedValues>
             </field>
             <field>
               <name>ICRST</name>
@@ -42859,6 +43963,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <bitOffset>11</bitOffset>
               <bitWidth>1</bitWidth>
               <access>write-only</access>
+              <enumeratedValues derivedFrom="ENABLED">
+              </enumeratedValues>
             </field>
             <field>
               <name>DCRST</name>
@@ -42866,6 +43972,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <bitOffset>12</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
+              <enumeratedValues derivedFrom="ENABLED">
+              </enumeratedValues>
             </field>
           </fields>
         </register>

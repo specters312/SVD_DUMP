@@ -354,12 +354,12 @@
                 <enumeratedValue>
                   <name>00</name>
                   <description>Low-power boot</description>
-                  <value>#0</value>
+                  <value>#00</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>01</name>
                   <description>Normal boot</description>
-                  <value>#1</value>
+                  <value>#01</value>
                 </enumeratedValue>
               </enumeratedValues>
             </field>
@@ -373,12 +373,12 @@
                 <enumeratedValue>
                   <name>00</name>
                   <description>Force Boot from ROM if BOOTCFG0 asserted, where BOOTCFG0 is the boot config function which is muxed with NMI pin</description>
-                  <value>#0</value>
+                  <value>#00</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>01</name>
                   <description>Boot source configured by FOPT (BOOTSRC_SEL) bits</description>
-                  <value>#1</value>
+                  <value>#01</value>
                 </enumeratedValue>
               </enumeratedValues>
             </field>
@@ -392,12 +392,12 @@
                 <enumeratedValue>
                   <name>00</name>
                   <description>NMI interrupts are always blocked</description>
-                  <value>#0</value>
+                  <value>#00</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>01</name>
                   <description>NMI_b pin/interrupts reset default to enabled</description>
-                  <value>#1</value>
+                  <value>#01</value>
                 </enumeratedValue>
               </enumeratedValues>
             </field>
@@ -411,12 +411,12 @@
                 <enumeratedValue>
                   <name>00</name>
                   <description>Slower initialization</description>
-                  <value>#0</value>
+                  <value>#00</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>01</name>
                   <description>Fast Initialization</description>
-                  <value>#1</value>
+                  <value>#01</value>
                 </enumeratedValue>
               </enumeratedValues>
             </field>
@@ -21337,7 +21337,7 @@
                 <enumeratedValue>
                   <name>0</name>
                   <description>Source address modulo feature is disabled</description>
-                  <value>#00000</value>
+                  <value>#0</value>
                 </enumeratedValue>
               </enumeratedValues>
             </field>
@@ -22519,12 +22519,12 @@
                 <enumeratedValue>
                   <name>0</name>
                   <description>No error has occurred for slave port n.</description>
-                  <value>#00000</value>
+                  <value>#0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>1</name>
                   <description>An error has occurred for slave port n.</description>
-                  <value>#00001</value>
+                  <value>#1</value>
                 </enumeratedValue>
               </enumeratedValues>
             </field>
@@ -22761,12 +22761,12 @@
                 <enumeratedValue>
                   <name>0</name>
                   <description>An attempted access of that mode may be terminated with an access error (if not allowed by another descriptor) and the access not performed.</description>
-                  <value>#000</value>
+                  <value>#0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>1</name>
                   <description>Allows the given access type to occur</description>
-                  <value>#001</value>
+                  <value>#1</value>
                 </enumeratedValue>
               </enumeratedValues>
             </field>
@@ -23104,12 +23104,12 @@
                 <enumeratedValue>
                   <name>0</name>
                   <description>An attempted access of that mode may be terminated with an access error (if not allowed by another descriptor) and the access not performed.</description>
-                  <value>#000</value>
+                  <value>#0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>1</name>
                   <description>Allows the given access type to occur</description>
-                  <value>#001</value>
+                  <value>#1</value>
                 </enumeratedValue>
               </enumeratedValues>
             </field>
@@ -24031,12 +24031,12 @@
                 <enumeratedValue>
                   <name>0</name>
                   <description>No cache way invalidation for the corresponding cache</description>
-                  <value>#0000</value>
+                  <value>#0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>1</name>
                   <description>Invalidate cache way for the corresponding cache: clear the tag, data, and vld bits of ways selected</description>
-                  <value>#0001</value>
+                  <value>#1</value>
                 </enumeratedValue>
               </enumeratedValues>
             </field>
@@ -24050,12 +24050,12 @@
                 <enumeratedValue>
                   <name>0</name>
                   <description>Cache way is unlocked and may be displaced</description>
-                  <value>#0000</value>
+                  <value>#0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>1</name>
                   <description>Cache way is locked and its contents are not displaced</description>
-                  <value>#0001</value>
+                  <value>#1</value>
                 </enumeratedValue>
               </enumeratedValues>
             </field>
@@ -29242,12 +29242,12 @@
                 <enumeratedValue>
                   <name>0</name>
                   <description>Transmit data channel N is disabled.</description>
-                  <value>#00</value>
+                  <value>#0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>1</name>
                   <description>Transmit data channel N is enabled.</description>
-                  <value>#01</value>
+                  <value>#1</value>
                 </enumeratedValue>
               </enumeratedValues>
             </field>
@@ -29261,12 +29261,12 @@
                 <enumeratedValue>
                   <name>0</name>
                   <description>No effect.</description>
-                  <value>#00</value>
+                  <value>#0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>1</name>
                   <description>Transmit data channel N FIFO is reset.</description>
-                  <value>#01</value>
+                  <value>#1</value>
                 </enumeratedValue>
               </enumeratedValues>
             </field>
@@ -30143,12 +30143,12 @@
                 <enumeratedValue>
                   <name>0</name>
                   <description>Receive data channel N is disabled.</description>
-                  <value>#00</value>
+                  <value>#0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>1</name>
                   <description>Receive data channel N is enabled.</description>
-                  <value>#01</value>
+                  <value>#1</value>
                 </enumeratedValue>
               </enumeratedValues>
             </field>
@@ -30162,12 +30162,12 @@
                 <enumeratedValue>
                   <name>0</name>
                   <description>No effect.</description>
-                  <value>#00</value>
+                  <value>#0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>1</name>
                   <description>Receive data channel N FIFO is reset.</description>
-                  <value>#01</value>
+                  <value>#1</value>
                 </enumeratedValue>
               </enumeratedValues>
             </field>
@@ -58896,7 +58896,7 @@
                 <enumeratedValue>
                   <name>0</name>
                   <description>No filter/bypass</description>
-                  <value>#0000</value>
+                  <value>#0</value>
                 </enumeratedValue>
               </enumeratedValues>
             </field>
@@ -59804,7 +59804,7 @@
                 <enumeratedValue>
                   <name>0</name>
                   <description>No filter/bypass</description>
-                  <value>#0000</value>
+                  <value>#0</value>
                 </enumeratedValue>
               </enumeratedValues>
             </field>
@@ -60712,7 +60712,7 @@
                 <enumeratedValue>
                   <name>0</name>
                   <description>No filter/bypass</description>
-                  <value>#0000</value>
+                  <value>#0</value>
                 </enumeratedValue>
               </enumeratedValues>
             </field>
@@ -61620,7 +61620,7 @@
                 <enumeratedValue>
                   <name>0</name>
                   <description>No filter/bypass</description>
-                  <value>#0000</value>
+                  <value>#0</value>
                 </enumeratedValue>
               </enumeratedValues>
             </field>
@@ -65080,7 +65080,7 @@
                 <enumeratedValue>
                   <name>000000</name>
                   <description>Min</description>
-                  <value>#0</value>
+                  <value>#000000</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>111111</name>
@@ -70705,7 +70705,7 @@
                 <enumeratedValue>
                   <name>0x00</name>
                   <description>Minor revision number for TRNG.</description>
-                  <value>#0</value>
+                  <value>#0x00</value>
                 </enumeratedValue>
               </enumeratedValues>
             </field>
@@ -70719,7 +70719,7 @@
                 <enumeratedValue>
                   <name>0x01</name>
                   <description>Major revision number for TRNG.</description>
-                  <value>#1</value>
+                  <value>#0x01</value>
                 </enumeratedValue>
               </enumeratedValues>
             </field>
@@ -70751,7 +70751,7 @@
                 <enumeratedValue>
                   <name>0x00</name>
                   <description>TRNG_CONFIG_OPT for TRNG.</description>
-                  <value>#0</value>
+                  <value>#0x00</value>
                 </enumeratedValue>
               </enumeratedValues>
             </field>
@@ -70765,7 +70765,7 @@
                 <enumeratedValue>
                   <name>0x00</name>
                   <description>TRNG_ECO_REV for TRNG.</description>
-                  <value>#0</value>
+                  <value>#0x00</value>
                 </enumeratedValue>
               </enumeratedValues>
             </field>
@@ -70779,7 +70779,7 @@
                 <enumeratedValue>
                   <name>0x00</name>
                   <description>INTG_OPT for TRNG.</description>
-                  <value>#0</value>
+                  <value>#0x00</value>
                 </enumeratedValue>
               </enumeratedValues>
             </field>
@@ -70793,7 +70793,7 @@
                 <enumeratedValue>
                   <name>0x00</name>
                   <description>COMPILE_OPT for TRNG.</description>
-                  <value>#0</value>
+                  <value>#0x00</value>
                 </enumeratedValue>
               </enumeratedValues>
             </field>
@@ -71911,12 +71911,12 @@
                 <enumeratedValue>
                   <name>0</name>
                   <description>Divisor by 1.</description>
-                  <value>#0000</value>
+                  <value>#0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>1</name>
                   <description>Divisor by 2.</description>
-                  <value>#0001</value>
+                  <value>#1</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>1110</name>
@@ -86478,7 +86478,7 @@
                 <enumeratedValue>
                   <name>0</name>
                   <description>Zero Threshold. RTE will not be set</description>
-                  <value>#0000</value>
+                  <value>#0</value>
                 </enumeratedValue>
               </enumeratedValues>
             </field>
@@ -86510,12 +86510,12 @@
                 <enumeratedValue>
                   <name>0</name>
                   <description>TNTE will never be set; retransmission after NACK reception is disabled.</description>
-                  <value>#0000</value>
+                  <value>#0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>1</name>
                   <description>TNTE will be set after 1 nack is received; 0 retransmissions occurs.</description>
-                  <value>#0001</value>
+                  <value>#1</value>
                 </enumeratedValue>
               </enumeratedValues>
             </field>
@@ -86756,7 +86756,7 @@
                 <enumeratedValue>
                   <name>0</name>
                   <description>FIFO is emtpy</description>
-                  <value>#00000</value>
+                  <value>#0</value>
                 </enumeratedValue>
               </enumeratedValues>
             </field>
@@ -86940,7 +86940,7 @@
                 <enumeratedValue>
                   <name>0</name>
                   <description>FIFO is emtpy</description>
-                  <value>#00000</value>
+                  <value>#0</value>
                 </enumeratedValue>
               </enumeratedValues>
             </field>
@@ -88266,7 +88266,7 @@
                 <enumeratedValue>
                   <name>0</name>
                   <description>Zero Threshold. RTE will not be set</description>
-                  <value>#0000</value>
+                  <value>#0</value>
                 </enumeratedValue>
               </enumeratedValues>
             </field>
@@ -88298,12 +88298,12 @@
                 <enumeratedValue>
                   <name>0</name>
                   <description>TNTE will never be set; retransmission after NACK reception is disabled.</description>
-                  <value>#0000</value>
+                  <value>#0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>1</name>
                   <description>TNTE will be set after 1 nack is received; 0 retransmissions occurs.</description>
-                  <value>#0001</value>
+                  <value>#1</value>
                 </enumeratedValue>
               </enumeratedValues>
             </field>
@@ -88544,7 +88544,7 @@
                 <enumeratedValue>
                   <name>0</name>
                   <description>FIFO is emtpy</description>
-                  <value>#00000</value>
+                  <value>#0</value>
                 </enumeratedValue>
               </enumeratedValues>
             </field>
@@ -88728,7 +88728,7 @@
                 <enumeratedValue>
                   <name>0</name>
                   <description>FIFO is emtpy</description>
-                  <value>#00000</value>
+                  <value>#0</value>
                 </enumeratedValue>
               </enumeratedValues>
             </field>
@@ -89730,322 +89730,322 @@
                 <enumeratedValue>
                   <name>000000</name>
                   <description>Select 1 delay chain tap</description>
-                  <value>#0</value>
+                  <value>#000000</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>000001</name>
                   <description>Select 2 delay chain tap</description>
-                  <value>#1</value>
+                  <value>#000001</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>0000010</name>
                   <description>Select 3 delay chain tap</description>
-                  <value>#10</value>
+                  <value>#0000010</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>0000011</name>
                   <description>Select 4 delay chain tap</description>
-                  <value>#11</value>
+                  <value>#0000011</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>00000100</name>
                   <description>Select 5 delay chain tap</description>
-                  <value>#100</value>
+                  <value>#00000100</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>00000101</name>
                   <description>Select 6 delay chain tap</description>
-                  <value>#101</value>
+                  <value>#00000101</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>00000110</name>
                   <description>Select 7 delay chain tap</description>
-                  <value>#110</value>
+                  <value>#00000110</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>00000111</name>
                   <description>Select 8 delay chain tap</description>
-                  <value>#111</value>
+                  <value>#00000111</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>000001000</name>
                   <description>Select 9 delay chain tap</description>
-                  <value>#1000</value>
+                  <value>#000001000</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>000001001</name>
                   <description>Select 10 delay chain tap</description>
-                  <value>#1001</value>
+                  <value>#000001001</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>000001010</name>
                   <description>Select 11 delay chain tap</description>
-                  <value>#1010</value>
+                  <value>#000001010</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>000001011</name>
                   <description>Select 12 delay chain tap</description>
-                  <value>#1011</value>
+                  <value>#000001011</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>000001100</name>
                   <description>Select 13 delay chain tap</description>
-                  <value>#1100</value>
+                  <value>#000001100</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>000001101</name>
                   <description>Select 14 delay chain tap</description>
-                  <value>#1101</value>
+                  <value>#000001101</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>000001110</name>
                   <description>Select 15 delay chain tap</description>
-                  <value>#1110</value>
+                  <value>#000001110</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>000001111</name>
                   <description>Select 16 delay chain tap</description>
-                  <value>#1111</value>
+                  <value>#000001111</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>0000010000</name>
                   <description>Select 17 delay chain tap</description>
-                  <value>#10000</value>
+                  <value>#0000010000</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>0000010001</name>
                   <description>Select 18 delay chain tap</description>
-                  <value>#10001</value>
+                  <value>#0000010001</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>0000010010</name>
                   <description>Select 19 delay chain tap</description>
-                  <value>#10010</value>
+                  <value>#0000010010</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>0000010011</name>
                   <description>Select 20 delay chain tap</description>
-                  <value>#10011</value>
+                  <value>#0000010011</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>0000010100</name>
                   <description>Select 21 delay chain tap</description>
-                  <value>#10100</value>
+                  <value>#0000010100</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>0000010101</name>
                   <description>Select 22 delay chain tap</description>
-                  <value>#10101</value>
+                  <value>#0000010101</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>0000010110</name>
                   <description>Select 23 delay chain tap</description>
-                  <value>#10110</value>
+                  <value>#0000010110</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>0000010111</name>
                   <description>Select 24 delay chain tap</description>
-                  <value>#10111</value>
+                  <value>#0000010111</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>0000011000</name>
                   <description>Select 25 delay chain tap</description>
-                  <value>#11000</value>
+                  <value>#0000011000</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>0000011001</name>
                   <description>Select 26 delay chain tap</description>
-                  <value>#11001</value>
+                  <value>#0000011001</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>0000011010</name>
                   <description>Select 27 delay chain tap</description>
-                  <value>#11010</value>
+                  <value>#0000011010</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>0000011011</name>
                   <description>Select 28 delay chain tap</description>
-                  <value>#11011</value>
+                  <value>#0000011011</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>0000011100</name>
                   <description>Select 29 delay chain tap</description>
-                  <value>#11100</value>
+                  <value>#0000011100</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>0000011101</name>
                   <description>Select 30 delay chain tap</description>
-                  <value>#11101</value>
+                  <value>#0000011101</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>0000011110</name>
                   <description>Select 31 delay chain tap</description>
-                  <value>#11110</value>
+                  <value>#0000011110</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>0000011111</name>
                   <description>Select 32 delay chain tap</description>
-                  <value>#11111</value>
+                  <value>#0000011111</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>00000100000</name>
                   <description>Select 33 delay chain tap</description>
-                  <value>#100000</value>
+                  <value>#00000100000</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>00000100001</name>
                   <description>Select 34 delay chain tap</description>
-                  <value>#100001</value>
+                  <value>#00000100001</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>00000100010</name>
                   <description>Select 35 delay chain tap</description>
-                  <value>#100010</value>
+                  <value>#00000100010</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>00000100011</name>
                   <description>Select 36 delay chain tap</description>
-                  <value>#100011</value>
+                  <value>#00000100011</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>00000100100</name>
                   <description>Select 37 delay chain tap</description>
-                  <value>#100100</value>
+                  <value>#00000100100</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>00000100101</name>
                   <description>Select 38 delay chain tap</description>
-                  <value>#100101</value>
+                  <value>#00000100101</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>00000100110</name>
                   <description>Select 39 delay chain tap</description>
-                  <value>#100110</value>
+                  <value>#00000100110</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>00000100111</name>
                   <description>Select 40 delay chain tap</description>
-                  <value>#100111</value>
+                  <value>#00000100111</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>00000101000</name>
                   <description>Select 41 delay chain tap</description>
-                  <value>#101000</value>
+                  <value>#00000101000</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>00000101001</name>
                   <description>Select 42 delay chain tap</description>
-                  <value>#101001</value>
+                  <value>#00000101001</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>00000101010</name>
                   <description>Select 43 delay chain tap</description>
-                  <value>#101010</value>
+                  <value>#00000101010</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>00000101011</name>
                   <description>Select 44 delay chain tap</description>
-                  <value>#101011</value>
+                  <value>#00000101011</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>00000101100</name>
                   <description>Select 45 delay chain tap</description>
-                  <value>#101100</value>
+                  <value>#00000101100</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>00000101101</name>
                   <description>Select 46 delay chain tap</description>
-                  <value>#101101</value>
+                  <value>#00000101101</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>00000101110</name>
                   <description>Select 47 delay chain tap</description>
-                  <value>#101110</value>
+                  <value>#00000101110</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>00000101111</name>
                   <description>Select 48 delay chain tap</description>
-                  <value>#101111</value>
+                  <value>#00000101111</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>00000110000</name>
                   <description>Select 49 delay chain tap</description>
-                  <value>#110000</value>
+                  <value>#00000110000</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>00000110001</name>
                   <description>Select 50 delay chain tap</description>
-                  <value>#110001</value>
+                  <value>#00000110001</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>00000110010</name>
                   <description>Select 51 delay chain tap</description>
-                  <value>#110010</value>
+                  <value>#00000110010</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>00000110011</name>
                   <description>Select 52 delay chain tap</description>
-                  <value>#110011</value>
+                  <value>#00000110011</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>00000110100</name>
                   <description>Select 53 delay chain tap</description>
-                  <value>#110100</value>
+                  <value>#00000110100</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>00000110101</name>
                   <description>Select 54 delay chain tap</description>
-                  <value>#110101</value>
+                  <value>#00000110101</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>00000110110</name>
                   <description>Select 55 delay chain tap</description>
-                  <value>#110110</value>
+                  <value>#00000110110</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>00000110111</name>
                   <description>Select 56 delay chain tap</description>
-                  <value>#110111</value>
+                  <value>#00000110111</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>00000111000</name>
                   <description>Select 57 delay chain tap</description>
-                  <value>#111000</value>
+                  <value>#00000111000</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>00000111001</name>
                   <description>Select 58 delay chain tap</description>
-                  <value>#111001</value>
+                  <value>#00000111001</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>00000111010</name>
                   <description>Select 59 delay chain tap</description>
-                  <value>#111010</value>
+                  <value>#00000111010</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>00000111011</name>
                   <description>Select 60 delay chain tap</description>
-                  <value>#111011</value>
+                  <value>#00000111011</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>00000111100</name>
                   <description>Select 61 delay chain tap</description>
-                  <value>#111100</value>
+                  <value>#00000111100</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>00000111101</name>
                   <description>Select 62 delay chain tap</description>
-                  <value>#111101</value>
+                  <value>#00000111101</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>00000111110</name>
                   <description>Select 63 delay chain tap</description>
-                  <value>#111110</value>
+                  <value>#00000111110</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>00000111111</name>
                   <description>Select 64 delay chain tap</description>
-                  <value>#111111</value>
+                  <value>#00000111111</value>
                 </enumeratedValue>
               </enumeratedValues>
             </field>
@@ -90059,322 +90059,322 @@
                 <enumeratedValue>
                   <name>000000</name>
                   <description>Select 1 delay chain tap</description>
-                  <value>#0</value>
+                  <value>#000000</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>000001</name>
                   <description>Select 2 delay chain tap</description>
-                  <value>#1</value>
+                  <value>#000001</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>0000010</name>
                   <description>Select 3 delay chain tap</description>
-                  <value>#10</value>
+                  <value>#0000010</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>0000011</name>
                   <description>Select 4 delay chain tap</description>
-                  <value>#11</value>
+                  <value>#0000011</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>00000100</name>
                   <description>Select 5 delay chain tap</description>
-                  <value>#100</value>
+                  <value>#00000100</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>00000101</name>
                   <description>Select 6 delay chain tap</description>
-                  <value>#101</value>
+                  <value>#00000101</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>00000110</name>
                   <description>Select 7 delay chain tap</description>
-                  <value>#110</value>
+                  <value>#00000110</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>00000111</name>
                   <description>Select 8 delay chain tap</description>
-                  <value>#111</value>
+                  <value>#00000111</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>000001000</name>
                   <description>Select 9 delay chain tap</description>
-                  <value>#1000</value>
+                  <value>#000001000</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>000001001</name>
                   <description>Select 10 delay chain tap</description>
-                  <value>#1001</value>
+                  <value>#000001001</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>000001010</name>
                   <description>Select 11 delay chain tap</description>
-                  <value>#1010</value>
+                  <value>#000001010</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>000001011</name>
                   <description>Select 12 delay chain tap</description>
-                  <value>#1011</value>
+                  <value>#000001011</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>000001100</name>
                   <description>Select 13 delay chain tap</description>
-                  <value>#1100</value>
+                  <value>#000001100</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>000001101</name>
                   <description>Select 14 delay chain tap</description>
-                  <value>#1101</value>
+                  <value>#000001101</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>000001110</name>
                   <description>Select 15 delay chain tap</description>
-                  <value>#1110</value>
+                  <value>#000001110</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>000001111</name>
                   <description>Select 16 delay chain tap</description>
-                  <value>#1111</value>
+                  <value>#000001111</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>0000010000</name>
                   <description>Select 17 delay chain tap</description>
-                  <value>#10000</value>
+                  <value>#0000010000</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>0000010001</name>
                   <description>Select 18 delay chain tap</description>
-                  <value>#10001</value>
+                  <value>#0000010001</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>0000010010</name>
                   <description>Select 19 delay chain tap</description>
-                  <value>#10010</value>
+                  <value>#0000010010</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>0000010011</name>
                   <description>Select 20 delay chain tap</description>
-                  <value>#10011</value>
+                  <value>#0000010011</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>0000010100</name>
                   <description>Select 21 delay chain tap</description>
-                  <value>#10100</value>
+                  <value>#0000010100</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>0000010101</name>
                   <description>Select 22 delay chain tap</description>
-                  <value>#10101</value>
+                  <value>#0000010101</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>0000010110</name>
                   <description>Select 23 delay chain tap</description>
-                  <value>#10110</value>
+                  <value>#0000010110</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>0000010111</name>
                   <description>Select 24 delay chain tap</description>
-                  <value>#10111</value>
+                  <value>#0000010111</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>0000011000</name>
                   <description>Select 25 delay chain tap</description>
-                  <value>#11000</value>
+                  <value>#0000011000</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>0000011001</name>
                   <description>Select 26 delay chain tap</description>
-                  <value>#11001</value>
+                  <value>#0000011001</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>0000011010</name>
                   <description>Select 27 delay chain tap</description>
-                  <value>#11010</value>
+                  <value>#0000011010</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>0000011011</name>
                   <description>Select 28 delay chain tap</description>
-                  <value>#11011</value>
+                  <value>#0000011011</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>0000011100</name>
                   <description>Select 29 delay chain tap</description>
-                  <value>#11100</value>
+                  <value>#0000011100</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>0000011101</name>
                   <description>Select 30 delay chain tap</description>
-                  <value>#11101</value>
+                  <value>#0000011101</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>0000011110</name>
                   <description>Select 31 delay chain tap</description>
-                  <value>#11110</value>
+                  <value>#0000011110</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>0000011111</name>
                   <description>Select 32 delay chain tap</description>
-                  <value>#11111</value>
+                  <value>#0000011111</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>00000100000</name>
                   <description>Select 33 delay chain tap</description>
-                  <value>#100000</value>
+                  <value>#00000100000</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>00000100001</name>
                   <description>Select 34 delay chain tap</description>
-                  <value>#100001</value>
+                  <value>#00000100001</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>00000100010</name>
                   <description>Select 35 delay chain tap</description>
-                  <value>#100010</value>
+                  <value>#00000100010</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>00000100011</name>
                   <description>Select 36 delay chain tap</description>
-                  <value>#100011</value>
+                  <value>#00000100011</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>00000100100</name>
                   <description>Select 37 delay chain tap</description>
-                  <value>#100100</value>
+                  <value>#00000100100</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>00000100101</name>
                   <description>Select 38 delay chain tap</description>
-                  <value>#100101</value>
+                  <value>#00000100101</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>00000100110</name>
                   <description>Select 39 delay chain tap</description>
-                  <value>#100110</value>
+                  <value>#00000100110</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>00000100111</name>
                   <description>Select 40 delay chain tap</description>
-                  <value>#100111</value>
+                  <value>#00000100111</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>00000101000</name>
                   <description>Select 41 delay chain tap</description>
-                  <value>#101000</value>
+                  <value>#00000101000</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>00000101001</name>
                   <description>Select 42 delay chain tap</description>
-                  <value>#101001</value>
+                  <value>#00000101001</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>00000101010</name>
                   <description>Select 43 delay chain tap</description>
-                  <value>#101010</value>
+                  <value>#00000101010</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>00000101011</name>
                   <description>Select 44 delay chain tap</description>
-                  <value>#101011</value>
+                  <value>#00000101011</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>00000101100</name>
                   <description>Select 45 delay chain tap</description>
-                  <value>#101100</value>
+                  <value>#00000101100</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>00000101101</name>
                   <description>Select 46 delay chain tap</description>
-                  <value>#101101</value>
+                  <value>#00000101101</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>00000101110</name>
                   <description>Select 47 delay chain tap</description>
-                  <value>#101110</value>
+                  <value>#00000101110</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>00000101111</name>
                   <description>Select 48 delay chain tap</description>
-                  <value>#101111</value>
+                  <value>#00000101111</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>00000110000</name>
                   <description>Select 49 delay chain tap</description>
-                  <value>#110000</value>
+                  <value>#00000110000</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>00000110001</name>
                   <description>Select 50 delay chain tap</description>
-                  <value>#110001</value>
+                  <value>#00000110001</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>00000110010</name>
                   <description>Select 51 delay chain tap</description>
-                  <value>#110010</value>
+                  <value>#00000110010</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>00000110011</name>
                   <description>Select 52 delay chain tap</description>
-                  <value>#110011</value>
+                  <value>#00000110011</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>00000110100</name>
                   <description>Select 53 delay chain tap</description>
-                  <value>#110100</value>
+                  <value>#00000110100</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>00000110101</name>
                   <description>Select 54 delay chain tap</description>
-                  <value>#110101</value>
+                  <value>#00000110101</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>00000110110</name>
                   <description>Select 55 delay chain tap</description>
-                  <value>#110110</value>
+                  <value>#00000110110</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>00000110111</name>
                   <description>Select 56 delay chain tap</description>
-                  <value>#110111</value>
+                  <value>#00000110111</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>00000111000</name>
                   <description>Select 57 delay chain tap</description>
-                  <value>#111000</value>
+                  <value>#00000111000</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>00000111001</name>
                   <description>Select 58 delay chain tap</description>
-                  <value>#111001</value>
+                  <value>#00000111001</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>00000111010</name>
                   <description>Select 59 delay chain tap</description>
-                  <value>#111010</value>
+                  <value>#00000111010</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>00000111011</name>
                   <description>Select 60 delay chain tap</description>
-                  <value>#111011</value>
+                  <value>#00000111011</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>00000111100</name>
                   <description>Select 61 delay chain tap</description>
-                  <value>#111100</value>
+                  <value>#00000111100</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>00000111101</name>
                   <description>Select 62 delay chain tap</description>
-                  <value>#111101</value>
+                  <value>#00000111101</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>00000111110</name>
                   <description>Select 63 delay chain tap</description>
-                  <value>#111110</value>
+                  <value>#00000111110</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>00000111111</name>
                   <description>Select 64 delay chain tap</description>
-                  <value>#111111</value>
+                  <value>#00000111111</value>
                 </enumeratedValue>
               </enumeratedValues>
             </field>

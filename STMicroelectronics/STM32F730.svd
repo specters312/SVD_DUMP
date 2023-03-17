@@ -22277,8 +22277,8 @@
                <resetValue>0x00000000</resetValue>
                <fields>
                   <field>
-                     <name>O24CE</name>
-                     <description>O24CE</description>
+                     <name>OC4CE</name>
+                     <description>OC4CE</description>
                      <bitOffset>15</bitOffset>
                      <bitWidth>1</bitWidth>
                   </field>
@@ -23206,8 +23206,8 @@
                <resetValue>0x00000000</resetValue>
                <fields>
                   <field>
-                     <name>O24CE</name>
-                     <description>O24CE</description>
+                     <name>OC4CE</name>
+                     <description>OC4CE</description>
                      <bitOffset>15</bitOffset>
                      <bitWidth>1</bitWidth>
                   </field>
@@ -24127,8 +24127,8 @@
                <resetValue>0x00000000</resetValue>
                <fields>
                   <field>
-                     <name>O24CE</name>
-                     <description>O24CE</description>
+                     <name>OC4CE</name>
+                     <description>OC4CE</description>
                      <bitOffset>15</bitOffset>
                      <bitWidth>1</bitWidth>
                   </field>
@@ -57169,7 +57169,7 @@
                <description>MPU control register</description>
                <addressOffset>0x4</addressOffset>
                <size>0x20</size>
-               <access>read-only</access>
+               <access>read-write</access>
                <resetValue>0X00000000</resetValue>
                <fields>
                   <field>
@@ -58064,8 +58064,8 @@
                </fields>
             </register>
             <register>
-               <name>SHCRS</name>
-               <displayName>SHCRS</displayName>
+               <name>SHCSR</name>
+               <displayName>SHCSR</displayName>
                <description>System handler control and state           register</description>
                <addressOffset>0x24</addressOffset>
                <size>0x20</size>
