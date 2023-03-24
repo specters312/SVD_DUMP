@@ -8,6 +8,7 @@ SVD files are kind of hard to come by and companies usually dont want you to hav
 - [@specters](https://www.twitter.com/_specters_)
 - @rqu
 - A really smart hardware hacker named Josh
+- Nathan Van Vliet - @nathanvv21
 
 ## Feedback
 
